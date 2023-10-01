@@ -1,11 +1,7 @@
 """
-Luis Gandarillas Fernandez - 100471965@alumnos.uc3m.es
-Olivia Grima Perez - 100474858@alumnos.uc3m.es
+Luis Gandarillas Fernandez - Arcade 1942
 
-Juego 1942
-Ejecutar el juego desde juego.py
-
-Explosiones de las balas al impactar con objetos.
+Run game: python3 juego.py
 """
 
 import pyxel
@@ -13,7 +9,7 @@ import constants
 from point import Point
 
 class Explosion:
-    
+    """Explosiones de las balas al impactar con objetos"""    
     def __init__(self, x, y):
         
         if type(x) != int and type(x) != float:

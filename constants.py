@@ -1,11 +1,7 @@
 """
-Luis Gandarillas Fernandez - 100471965@alumnos.uc3m.es
-Olivia Grima Perez - 100474858@alumnos.uc3m.es
+Luis Gandarillas Fernandez - Arcade 1942
 
-Juego 1942
-Ejecutar el juego desde juego.py
-
-Constantes a utilizar en el juego.
+Run game: python3 juego.py
 """
 
 # Dimensiones

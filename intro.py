@@ -1,11 +1,7 @@
 """
-Luis Gandarillas Fernandez - 100471965@alumnos.uc3m.es
-Olivia Grima Perez - 100474858@alumnos.uc3m.es
+Luis Gandarillas Fernandez - Arcade 1942
 
-Juego 1942
-Ejecutar el juego desde juego.py
-
-Introduccion del juego. Para pintar el logo y el titulo.
+Run game: python3 juego.py
 """
 
 import pyxel
