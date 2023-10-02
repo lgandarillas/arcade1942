@@ -5,17 +5,17 @@ Run game: python3 juego.py
 """
 
 class Point():
-    """Sirve para calcular las coordenadas x e y de un objeto"""
+    """Used to calculate the x and y coordinates of an object"""
     
     def __init__(self, x, y):
         
         if type(x) != int and type(x) != float:
-            raise TypeError("x debe der un numero")
+            raise TypeError("x must be a number")
         else:
             self.__x = x
         
         if type(y) != int and type(y) != float:
-            raise TypeError("x debe der un numero")
+            raise TypeError("x must be a number")
         else:
             self.__y = y
     

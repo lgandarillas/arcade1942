@@ -12,7 +12,7 @@ from bala import Bala
 from enemigo import Enemigo
 
 class Regular(Enemigo):
-    """ En grupos de varios aviones, sin una formacion especifica, podran 
+    """En grupos de varios aviones, sin una formacion especifica, podran 
     dispararte. Una vez que alcanzan la mitad de la pantalla vuelven por 
     la parte superior de la pantalla y desaparecen."""
     

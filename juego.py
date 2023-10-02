@@ -12,7 +12,6 @@ from gameover import Gameover
 
 
 class Game():
-    """ En esta clase implementamos el juego 1942"""
     
     def __init__(self):
         # Elementos API pyxel
