@@ -11,7 +11,7 @@ from island import Island
 from player import Player
 from regular import Regular
 from bombardier import Bombardier
-from rojo import Rojo
+from red import Red
 from superbombardero import Superbombardero
 from explosion import Explosion
 
@@ -55,7 +55,7 @@ class Nivel:
     def __createRojos(self, lst, dif):
         for i in range(1, 6):
             sep = dif + i * 100
-            r = Rojo(sep)
+            r = Red(sep)
             lst.append(r)
     
     def __createBombarderos(self, lst):

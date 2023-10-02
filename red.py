@@ -12,7 +12,7 @@ from point import Point
 from bullet import Bullet
 from enemy import Enemy
 
-class Rojo(Enemy):
+class Red(Enemy):
     
     def __init__(self, sep):
         
