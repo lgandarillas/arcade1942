@@ -31,7 +31,7 @@ class Bombardier(Enemy):
         self.__speed_x = constants.BOMB_SPEED[0]
         self.__speed_y = constants.BOMB_SPEED[1]        
         self.__shot = random.randint(30, 50)
-        self.__balas = []
+        self.__bullets = []
         self.__bala_type = constants.BULLET_ENEMY        
         self.__frames = -sep
         
@@ -68,8 +68,8 @@ class Bombardier(Enemy):
         self.__lives = value
     
     @property 
-    def balas(self):
-        return self.__balas
+    def bullets(self):
+        return self.__bullets
     
     @property
     def type(self):
@@ -77,7 +77,7 @@ class Bombardier(Enemy):
     
     def __disparar(self):
         if self.__point.x == self.__shot or self.__point.y == self.__shot:
-            self.__balas.append(Bullet(self.__point.x + self.__width/2,
+            self.__bullets.append(Bullet(self.__point.x + self.__width/2,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
     
@@ -139,7 +139,7 @@ class Bombardier(Enemy):
         self.__frames += 1
         self.__mover()
         self.__disparar()
-        self.__desaparecer(self.__balas)
+        self.__desaparecer(self.__bullets)
         
             
     def draw(self):
@@ -150,5 +150,5 @@ class Bombardier(Enemy):
                 self.__pintar_derecha()
             elif self.__frames >560:
                 self.__pintar_subida()
-        for b in self.__balas:
+        for b in self.__bullets:
             b.draw()

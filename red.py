@@ -30,7 +30,7 @@ class Red(Enemy):
         self.__height = constants.RED_DER_1[4]
         self.__speed = constants.RED_SPEED[0]
         self.__shot = random.randint(-20, 50)
-        self.__balas = []
+        self.__bullets = []
         self.__vueltas = 2 if random.random() <= 0.5 else 3
         self.__vueltas_dadas = 0
         self.__recto = True
@@ -41,7 +41,7 @@ class Red(Enemy):
 
     def __disparar(self):
         if self.__shot == self.__point.x:
-            self.__balas.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
+            self.__bullets.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
                                      self.__point.y + constants.BOMB_DOWN_1[4],
                                      constants.BULLET_ENEMY))
     
@@ -78,8 +78,8 @@ class Red(Enemy):
         self.__lives = value
     
     @property 
-    def balas(self):
-        return self.__balas
+    def bullets(self):
+        return self.__bullets
     
     @property
     def type(self):
@@ -198,12 +198,12 @@ class Red(Enemy):
     def update(self):
         self.__mover()
         self.__disparar()
-        self.__desaparecer(self.__balas)
+        self.__desaparecer(self.__bullets)
         
 
     def draw(self):
         if self.__is_alive:
-            for b in self.__balas:
+            for b in self.__bullets:
                 b.draw()
         
         if self.__recto:

@@ -20,7 +20,7 @@ class Player():
         self.__height = constants.LOCKHEED_1[4]
         self.__speed_x = constants.LOCKHEED_SPEED[0]
         self.__speed_y = constants.LOCKHEED_SPEED[1]
-        self.__balas = []
+        self.__bullets = []
         self.__bala_type = constants.BULLET_PLAYER
         self.__score = 0
         self.__max_score = 0
@@ -38,15 +38,15 @@ class Player():
     def __disparar(self):
         if self.__bonus:
             if pyxel.btnp(pyxel.KEY_SPACE):
-                self.__balas.append(Bullet(self.x + self.__width/2 - 5, 
+                self.__bullets.append(Bullet(self.x + self.__width/2 - 5, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
-                self.__balas.append(Bullet(self.x + self.__width/2 + 5, 
+                self.__bullets.append(Bullet(self.x + self.__width/2 + 5, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
         else:
             if pyxel.btnp(pyxel.KEY_SPACE):
-                self.__balas.append(Bullet(self.x + self.__width/2, 
+                self.__bullets.append(Bullet(self.x + self.__width/2, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
     
@@ -103,8 +103,8 @@ class Player():
         self.__max_score = value
     
     @property
-    def balas(self):
-        return self.__balas
+    def bullets(self):
+        return self.__bullets
     
     
     def __bajar(self):
@@ -167,7 +167,7 @@ class Player():
         self.__hacer_loop()
         self.__limitar()
         self.__disparar()
-        self.__desaparecer(self.__balas)    
+        self.__desaparecer(self.__bullets)    
     
     def draw(self):
         if self.__loop == False:
@@ -177,5 +177,5 @@ class Player():
         elif self.__loop == True and pyxel.frame_count - self.__tloop >= 10:
             self.__loop = False
             self.__tloop = False
-        for b in self.__balas:
+        for b in self.__bullets:
             b.draw()

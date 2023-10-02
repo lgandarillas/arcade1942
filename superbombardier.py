@@ -28,7 +28,7 @@ class Superbombardier(Enemy):
         self.__speed_x = constants.SUPERB_SPEED[0] * self.__dir
         self.__speed_y = constants.SUPERB_SPEED[1]
         self.__bala_type = constants.BULLET_ENEMY
-        self.__balas = []
+        self.__bullets = []
        
     @property
     def is_alive(self):
@@ -63,8 +63,8 @@ class Superbombardier(Enemy):
         self.__lives = value
     
     @property 
-    def balas(self):
-        return self.__balas
+    def bullets(self):
+        return self.__bullets
     
     @property
     def type(self):
@@ -94,10 +94,10 @@ class Superbombardier(Enemy):
     
     def __disparar(self):
         if self.__point.y % 20 == 0:
-            self.__balas.append(Bullet(self.__point.x + self.__width/2 -5,
+            self.__bullets.append(Bullet(self.__point.x + self.__width/2 -5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
-            self.__balas.append(Bullet(self.__point.x + self.__width/2 + 5,
+            self.__bullets.append(Bullet(self.__point.x + self.__width/2 + 5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
     
@@ -121,11 +121,11 @@ class Superbombardier(Enemy):
     def update(self):
         self.__mover()
         self.__disparar()
-        self.__desaparecer(self.__balas)
+        self.__desaparecer(self.__bullets)
      
     def draw(self):
         if self.__is_alive:
             if pyxel.frame_count > 1200:
                 self.__pintar_subida()        
-        for b in self.__balas:
+        for b in self.__bullets:
             b.draw()

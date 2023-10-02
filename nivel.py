@@ -70,7 +70,7 @@ class Nivel:
     
     def __matar_enemigos(self, lst):
         for e in lst:
-            for b in self.__player.balas:
+            for b in self.__player.bullets:
                 if (e.x + e.w > b.x
                     and b.x + b.w > e.x
                     and e.y + e.h > b.y
@@ -96,7 +96,7 @@ class Nivel:
     def __matar_player(self, lst):
         if not self.__player.loop:
             for e in lst:
-                for b in e.balas:
+                for b in e.bullets:
                     if (self.__player.x + self.__player.w > b.x
                         and b.x + b.w > self.__player.x
                         and self.__player.y + self.__player.h > b.y
