@@ -12,7 +12,7 @@ from point import Point
 from bullet import Bullet
 from enemy import Enemy
 
-class Superbombardero(Enemy):
+class Superbombardier(Enemy):
     
     def __init__(self):
         

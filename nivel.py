@@ -12,7 +12,7 @@ from player import Player
 from regular import Regular
 from bombardier import Bombardier
 from red import Red
-from superbombardero import Superbombardero
+from superbombardier import Superbombardier
 from explosion import Explosion
 
 class Nivel:
@@ -43,7 +43,7 @@ class Nivel:
         self.__createRojos(enemigos, dif)
         self.__createBombarderos(enemigos)#, dif)
         
-        enemigos.append(Superbombardero())
+        enemigos.append(Superbombardier())
         return enemigos
     
     def __createRegulares(self, lst):
