@@ -18,7 +18,7 @@ class Enemy:
     def __bajar(self):
         self.__point.y += self.__speed_y
     
-    def __subir(self):
+    def __increase_height(self):
         self.__point.y -= self.__speed_y
     
     def __derecha(self):

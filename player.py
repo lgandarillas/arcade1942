@@ -110,7 +110,7 @@ class Player():
     def __bajar(self):
         self.__point.y += self.__speed_y
     
-    def __subir(self):
+    def __increase_height(self):
         self.__point.y -= self.__speed_y
     
     def __derecha(self):
@@ -158,7 +158,7 @@ class Player():
         if pyxel.btn(pyxel.KEY_RIGHT):
             self.__derecha()
         if pyxel.btn(pyxel.KEY_UP):
-            self.__subir()
+            self.__increase_height()
         if pyxel.btn(pyxel.KEY_DOWN):
             self.__bajar()
     

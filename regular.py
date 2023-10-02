@@ -85,7 +85,7 @@ class Regular(Enemy):
     def __bajar(self):
         self.__point.y += self.__speed_y
     
-    def __subir(self):
+    def __increase_height(self):
         self.__point.y -= self.__speed_y
     
     def __derecha(self):
@@ -129,7 +129,7 @@ class Regular(Enemy):
         if self.__point.y >= pyxel.height/2:
             self.__bajando = False
         if not self.__bajando:
-            self.__subir()
+            self.__increase_height()
             self.__izquierda()
     
     def update(self):

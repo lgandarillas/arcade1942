@@ -84,7 +84,7 @@ class Bombardier(Enemy):
     def __bajar(self):
         self.__point.y += self.__speed_y
     
-    def __subir(self):
+    def __increase_height(self):
         self.__point.y -= self.__speed_y
     
     def __derecha(self):
@@ -131,7 +131,7 @@ class Bombardier(Enemy):
         if self.__frames > 500 and self.__frames < 560:
             self.__derecha()
         elif self.__frames > 560:
-            self.__subir()
+            self.__increase_height()
         elif self.__frames > 660:
             self.__morir()
     

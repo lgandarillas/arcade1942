@@ -60,7 +60,7 @@ class Bullet:
     def h(self):
         return self.__height
     
-    def __subir(self):
+    def __increase_height(self):
         self.__point.y -= self.__speed
     
     def __bajar(self):
@@ -83,7 +83,7 @@ class Bullet:
         
     def update(self):
         if self.__type == constants.BULLET_PLAYER:
-            self.__subir()
+            self.__increase_height()
         if self.__type == constants.BULLET_ENEMY:
             self.__bajar()
         self.__morir()
