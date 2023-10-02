@@ -6,10 +6,8 @@ Run game: python3 main.py
 """
 
 class Point():
-    """Used to calculate the x and y coordinates of an object"""
-    
+
     def __init__(self, x, y):
-        
         if type(x) != int and type(x) != float:
             raise TypeError("x must be a number")
         else:

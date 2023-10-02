@@ -15,11 +15,9 @@ class Gameover():
     
     @property
     def get_scene(self):
-        """Devuelve la escena en la que nos encontramos."""
         return self.__gameover
     
     def draw(self):
-        """Pinto el logo del final y el texto para salir del juego."""
         pyxel.blt(33, 76, constants.GAMEOVER[0], constants.GAMEOVER[1],
                   constants.GAMEOVER[2], constants.GAMEOVER[3],
                   constants.GAMEOVER[4], constants.TRANSPARENTE)

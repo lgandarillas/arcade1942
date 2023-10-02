@@ -14,20 +14,16 @@ from point import Point
 class Isla:
     
     def __init__(self, tipo):
-        
-        # Asigno el tipo de isla
         if tipo != 0 and tipo != 1:
-            raise ValueError("El tipo de isla debe ser 0 o 1.")
+            raise ValueError("The island type must be 0 or 1.")
         else:
             self.__tipo = tipo
-        
-        # Creo una isla en la posicion (x, y)
+
         if self.__tipo == 0:
             self.__point = Point(0, -constants.ISLA_1[4])
         elif self.__tipo == 1:
             self.__point = Point(60, -150)
         
-        # La isla se desplaza desde el punto de referencia visual del avion
         self.__movimiento = constants.FONDO_SPEED
 
     @property
@@ -39,12 +35,9 @@ class Isla:
         return self.__point.y
     
     def __bajar(self):
-        """ Hace que la isla se despace (movimiento de la tierra) para que
-        desde el sistema de referencia del jugador de sensacion de movimiento."""
         self.__point.y += self.__movimiento
     
     def __reaparecer(self):
-        """ Cuando la isla sale por abajo de la pantalla reaparece arriba."""
         if self.__point.y > pyxel.height + constants.ISLA_1[4]:
             self.__point.y = -constants.ISLA_1[4]
     
