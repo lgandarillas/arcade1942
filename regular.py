@@ -31,7 +31,7 @@ class Regular(Enemy):
         self.__dir = 1 if random.random() <= 0.5 else -1
         self.__speed_x = constants.REGULAR_SPEED[0] * self.__dir
         self.__speed_y = constants.REGULAR_SPEED[1]
-        self.__disparo = random.randint(10, pyxel.height/2)
+        self.__shot = random.randint(10, pyxel.height/2)
         self.__balas = []
         self.__bala_type = constants.BULLET_ENEMY
         self.__bajando = True
@@ -77,7 +77,7 @@ class Regular(Enemy):
         return self.__type
     
     def __disparar(self):
-        if self.__point.y == self.__disparo:
+        if self.__point.y == self.__shot:
             self.__balas.append(Bullet(self.__point.x + self.__width/2,
                                      self.__point.y + self.__height,
                                      self.__bala_type))

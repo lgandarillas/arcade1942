@@ -29,7 +29,7 @@ class Red(Enemy):
         self.__width = constants.RED_DER_1[3]
         self.__height = constants.RED_DER_1[4]
         self.__speed = constants.RED_SPEED[0]
-        self.__disparo = random.randint(-20, 50)
+        self.__shot = random.randint(-20, 50)
         self.__balas = []
         self.__vueltas = 2 if random.random() <= 0.5 else 3
         self.__vueltas_dadas = 0
@@ -40,7 +40,7 @@ class Red(Enemy):
         
 
     def __disparar(self):
-        if self.__disparo == self.__point.x:
+        if self.__shot == self.__point.x:
             self.__balas.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
                                      self.__point.y + constants.BOMB_DOWN_1[4],
                                      constants.BULLET_ENEMY))

@@ -30,7 +30,7 @@ class Bombardier(Enemy):
         self.__height = constants.BOMB_DOWN_1[4]
         self.__speed_x = constants.BOMB_SPEED[0]
         self.__speed_y = constants.BOMB_SPEED[1]        
-        self.__disparo = random.randint(30, 50)
+        self.__shot = random.randint(30, 50)
         self.__balas = []
         self.__bala_type = constants.BULLET_ENEMY        
         self.__frames = -sep
@@ -76,7 +76,7 @@ class Bombardier(Enemy):
         return self.__type
     
     def __disparar(self):
-        if self.__point.x == self.__disparo or self.__point.y == self.__disparo:
+        if self.__point.x == self.__shot or self.__point.y == self.__shot:
             self.__balas.append(Bullet(self.__point.x + self.__width/2,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
