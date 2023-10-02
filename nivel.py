@@ -7,7 +7,7 @@ Run game: python3 main.py
 
 import pyxel
 import constants
-from isla import Isla
+from island import Island
 from player import Player
 from regular import Regular
 from bombardier import Bombardier
@@ -31,8 +31,8 @@ class Nivel:
     def __createIslas(self):
         islas = []
         
-        islas.append(Isla(0))
-        islas.append(Isla(1))
+        islas.append(Island(0))
+        islas.append(Island(1))
         
         return islas
     

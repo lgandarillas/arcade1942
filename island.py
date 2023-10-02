@@ -11,7 +11,7 @@ import constants
 from point import Point
 
 
-class Isla:
+class Island:
     
     def __init__(self, tipo):
         if tipo != 0 and tipo != 1:
