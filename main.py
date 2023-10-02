@@ -51,7 +51,7 @@ class Game():
         
     
     def draw(self):
-        pyxel.cls(constants.AZUL)
+        pyxel.cls(constants.BLUE)
         self.__draw_scene()
         
 Game()

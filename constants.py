@@ -11,7 +11,7 @@ SCREEN_H = 160
 
 # Colors
 TRANSPARENT = 2
-AZUL = 5
+BLUE = 5
 ROJO = 8
 AMARILLO = 10
 
