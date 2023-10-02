@@ -10,7 +10,7 @@ import constants
 from isla import Isla
 from player import Player
 from regular import Regular
-from bombardero import Bombardero
+from bombardier import Bombardier
 from rojo import Rojo
 from superbombardero import Superbombardero
 from explosion import Explosion
@@ -61,7 +61,7 @@ class Nivel:
     def __createBombarderos(self, lst):
         for i in range(1, 3):
             sep = i * constants.BOMB_DOWN_1[3]
-            b = Bombardero(sep)
+            b = Bombardier(sep)
             lst.append(b)
     
     def __matar(self, lst):
