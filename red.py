@@ -26,9 +26,9 @@ class Red(Enemy):
         self.__is_alive = True
         self.__vidas = 1
         self.__type = 1
-        self.__width = constants.ROJO_DER_1[3]
-        self.__height = constants.ROJO_DER_1[4]
-        self.__speed = constants.ROJO_SPEED[0]
+        self.__width = constants.RED_DER_1[3]
+        self.__height = constants.RED_DER_1[4]
+        self.__speed = constants.RED_SPEED[0]
         self.__disparo = random.randint(-20, 50)
         self.__balas = []
         self.__vueltas = 2 if random.random() <= 0.5 else 3
@@ -43,7 +43,7 @@ class Red(Enemy):
         if self.__disparo == self.__point.x:
             self.__balas.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
                                      self.__point.y + constants.BOMB_DOWN_1[4],
-                                     constants.BALA_ENEMY))
+                                     constants.BULLET_ENEMY))
     
     @property
     def is_alive(self):
@@ -150,42 +150,42 @@ class Red(Enemy):
 
 
     def __pintar_recto(self):
-        pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_DER_1[0],
-            constants.ROJO_DER_1[1] if pyxel.frame_count % 5 == 0 else\
-                constants.ROJO_DER_2[1],
-            constants.ROJO_DER_1[2],
-            constants.ROJO_DER_1[3], constants.ROJO_DER_1[4],
+        pyxel.blt(self.__point.x, self.__point.y, constants.RED_DER_1[0],
+            constants.RED_DER_1[1] if pyxel.frame_count % 5 == 0 else\
+                constants.RED_DER_2[1],
+            constants.RED_DER_1[2],
+            constants.RED_DER_1[3], constants.RED_DER_1[4],
             constants.TRANSPARENT)
     
     
     def __pintar_cuarto1(self):
-        pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_315[0],
-            constants.ROJO_315[1],
-            constants.ROJO_315[2],
-            constants.ROJO_315[3], constants.ROJO_315[4],
+        pyxel.blt(self.__point.x, self.__point.y, constants.RED_315[0],
+            constants.RED_315[1],
+            constants.RED_315[2],
+            constants.RED_315[3], constants.RED_315[4],
             constants.TRANSPARENT)  
         
         
     def __pintar_cuarto23(self):
         if self.__point.x >= 60:
-            pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_225[0],
-                constants.ROJO_225[1],
-                constants.ROJO_225[2],
-                constants.ROJO_225[3], constants.ROJO_225[4],
+            pyxel.blt(self.__point.x, self.__point.y, constants.RED_225[0],
+                constants.RED_225[1],
+                constants.RED_225[2],
+                constants.RED_225[3], constants.RED_225[4],
                 constants.TRANSPARENT)
         if self.__point.x < 60:
-            pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_135[0],
-                constants.ROJO_135[1],
-                constants.ROJO_135[2],
-                constants.ROJO_135[3], constants.ROJO_135[4],
+            pyxel.blt(self.__point.x, self.__point.y, constants.RED_135[0],
+                constants.RED_135[1],
+                constants.RED_135[2],
+                constants.RED_135[3], constants.RED_135[4],
                 constants.TRANSPARENT) 
     
     
     def __pintar_cuarto4(self):
-        pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_45[0],
-            constants.ROJO_45[1],
-            constants.ROJO_45[2],
-            constants.ROJO_45[3], constants.ROJO_45[4],
+        pyxel.blt(self.__point.x, self.__point.y, constants.RED_45[0],
+            constants.RED_45[1],
+            constants.RED_45[2],
+            constants.RED_45[3], constants.RED_45[4],
             constants.TRANSPARENT) 
     
     def __mover(self):

@@ -39,6 +39,6 @@ class Explosion:
             
     def draw(self):
         pyxel.circ(self.__point.x, self.__point.y, 
-                   self.__radius, constants.AMARILLO)        
+                   self.__radius, constants.YELLOW)        
         pyxel.circ(self.__point.x, self.__point.y, 
-                   self.__radius -2 , constants.ROJO)
+                   self.__radius -2 , constants.RED)

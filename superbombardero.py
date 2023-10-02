@@ -27,7 +27,7 @@ class Superbombardero(Enemy):
         self.__dir = 1 if random.random() <= 0.5 else -1
         self.__speed_x = constants.SUPERB_SPEED[0] * self.__dir
         self.__speed_y = constants.SUPERB_SPEED[1]
-        self.__bala_type = constants.BALA_ENEMY
+        self.__bala_type = constants.BULLET_ENEMY
         self.__balas = []
        
     @property

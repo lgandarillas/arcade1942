@@ -32,7 +32,7 @@ class Bombardier(Enemy):
         self.__speed_y = constants.BOMB_SPEED[1]        
         self.__disparo = random.randint(30, 50)
         self.__balas = []
-        self.__bala_type = constants.BALA_ENEMY        
+        self.__bala_type = constants.BULLET_ENEMY        
         self.__frames = -sep
         
     @property

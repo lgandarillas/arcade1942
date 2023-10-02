@@ -33,7 +33,7 @@ class Regular(Enemy):
         self.__speed_y = constants.REGULAR_SPEED[1]
         self.__disparo = random.randint(10, pyxel.height/2)
         self.__balas = []
-        self.__bala_type = constants.BALA_ENEMY
+        self.__bala_type = constants.BULLET_ENEMY
         self.__bajando = True
         
     @property

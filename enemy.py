@@ -13,7 +13,7 @@ class Enemy:
     def __init__(self):
         self.__is_alive = True
         self.__balas = []
-        self.__bala_type = constants.BALA_ENEMY
+        self.__bala_type = constants.BULLET_ENEMY
     
     def __bajar(self):
         self.__point.y += self.__speed_y

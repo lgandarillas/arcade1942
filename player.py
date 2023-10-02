@@ -21,7 +21,7 @@ class Player():
         self.__speed_x = constants.LOCKHEED_SPEED[0]
         self.__speed_y = constants.LOCKHEED_SPEED[1]
         self.__balas = []
-        self.__bala_type = constants.BALA_PLAYER
+        self.__bala_type = constants.BULLET_PLAYER
         self.__score = 0
         self.__max_score = 0
         self.__loop = False

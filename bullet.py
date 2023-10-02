@@ -27,14 +27,14 @@ class Bullet:
         else:
             self.__type = tipo
         
-        if self.__type == constants.BALA_PLAYER:  
-            self.__width = constants.BALA[3]
-            self.__height = constants.BALA[4]
-            self.__speed = constants.BALA_P_SPEED
-        elif self.__type == constants.BALA_ENEMY:
+        if self.__type == constants.BULLET_PLAYER:  
+            self.__width = constants.BULLET[3]
+            self.__height = constants.BULLET[4]
+            self.__speed = constants.BULLET_P_SPEED
+        elif self.__type == constants.BULLET_ENEMY:
             self.__width = 2
             self.__height = 2
-            self.__speed = constants.BALA_E_SPEED
+            self.__speed = constants.BULLET_E_SPEED
 
     @property
     def is_alive(self):
@@ -67,29 +67,29 @@ class Bullet:
         self.__point.y += self.__speed
     
     def __morir(self):
-        if self.__type == constants.BALA_PLAYER and self.__point.y < 5:
+        if self.__type == constants.BULLET_PLAYER and self.__point.y < 5:
             self.__is_alive = False        
-        elif self.__type == constants.BALA_ENEMY and self.__point.y > pyxel.height -5:
+        elif self.__type == constants.BULLET_ENEMY and self.__point.y > pyxel.height -5:
             self.__is_alive = False
     
     def __pintar_bala_p(self):
-        pyxel.blt(self.__point.x, self.__point.y, constants.BANCO[0],
-                  constants.BALA[1], constants.BALA[2],
-                  constants.BALA[3], constants.BALA[4],
+        pyxel.blt(self.__point.x, self.__point.y, constants.BANK[0],
+                  constants.BULLET[1], constants.BULLET[2],
+                  constants.BULLET[3], constants.BULLET[4],
                   constants.TRANSPARENT)
     
     def __pintar_bala_e(self):
-        pyxel.circ(self.__point.x, self.__point.y, 1 , constants.ROJO)
+        pyxel.circ(self.__point.x, self.__point.y, 1 , constants.RED)
         
     def update(self):
-        if self.__type == constants.BALA_PLAYER:
+        if self.__type == constants.BULLET_PLAYER:
             self.__subir()
-        if self.__type == constants.BALA_ENEMY:
+        if self.__type == constants.BULLET_ENEMY:
             self.__bajar()
         self.__morir()
         
     def draw(self):
-        if self.__is_alive and self.__type == constants.BALA_PLAYER:
+        if self.__is_alive and self.__type == constants.BULLET_PLAYER:
             self.__pintar_bala_p()        
-        elif self.__is_alive and  self.__type == constants.BALA_ENEMY:
+        elif self.__is_alive and  self.__type == constants.BULLET_ENEMY:
             self.__pintar_bala_e()

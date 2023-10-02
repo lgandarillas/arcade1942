@@ -20,7 +20,7 @@ class Island:
             self.__tipo = tipo
 
         if self.__tipo == 0:
-            self.__point = Point(0, -constants.ISLA_1[4])
+            self.__point = Point(0, -constants.ISLAND_1[4])
         elif self.__tipo == 1:
             self.__point = Point(60, -150)
         
@@ -38,8 +38,8 @@ class Island:
         self.__point.y += self.__movimiento
     
     def __reaparecer(self):
-        if self.__point.y > pyxel.height + constants.ISLA_1[4]:
-            self.__point.y = -constants.ISLA_1[4]
+        if self.__point.y > pyxel.height + constants.ISLAND_1[4]:
+            self.__point.y = -constants.ISLAND_1[4]
     
     def update(self):
         self.__bajar()
@@ -47,13 +47,13 @@ class Island:
     
     def draw(self):
         if self.__tipo == 0:
-            pyxel.blt(self.__point.x, self.__point.y, constants.ISLA_1[0],
-                      constants.ISLA_1[1], constants.ISLA_1[2],
-                      constants.ISLA_1[3], constants.ISLA_1[4],
+            pyxel.blt(self.__point.x, self.__point.y, constants.ISLAND_1[0],
+                      constants.ISLAND_1[1], constants.ISLAND_1[2],
+                      constants.ISLAND_1[3], constants.ISLAND_1[4],
                       constants.TRANSPARENT)
             
         if self.__tipo == 1:
-            pyxel.blt(self.__point.x, self.__point.y, constants.ISLA_2[0],
-                constants.ISLA_2[1], constants.ISLA_2[2],
-                constants.ISLA_2[3], constants.ISLA_2[4],
+            pyxel.blt(self.__point.x, self.__point.y, constants.ISLAND_2[0],
+                constants.ISLAND_2[1], constants.ISLAND_2[2],
+                constants.ISLAND_2[3], constants.ISLAND_2[4],
                 constants.TRANSPARENT)
