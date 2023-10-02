@@ -24,7 +24,7 @@ class Bombardier(Enemy):
             self.__point = Point(random.randint(5, 30), -sep)
         
         self.__is_alive = True
-        self.__vidas = 3
+        self.__lives = 3
         self.__type = 2
         self.__width = constants.BOMB_DOWN_1[3]
         self.__height = constants.BOMB_DOWN_1[4]
@@ -60,12 +60,12 @@ class Bombardier(Enemy):
         return self.__height
     
     @property
-    def vidas(self):
-        return self.__vidas
+    def lives(self):
+        return self.__lives
     
-    @vidas.setter 
-    def vidas(self, value):
-        self.__vidas = value
+    @lives.setter 
+    def lives(self, value):
+        self.__lives = value
     
     @property 
     def balas(self):

@@ -24,7 +24,7 @@ class Island:
         elif self.__tipo == 1:
             self.__point = Point(60, -150)
         
-        self.__movimiento = constants.FONDO_SPEED
+        self.__movimiento = constants.BACKGROUND_SPEED
 
     @property
     def x(self):

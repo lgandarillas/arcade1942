@@ -24,7 +24,7 @@ class Red(Enemy):
             self.__point = Point(-sep, 50)
         
         self.__is_alive = True
-        self.__vidas = 1
+        self.__lives = 1
         self.__type = 1
         self.__width = constants.RED_DER_1[3]
         self.__height = constants.RED_DER_1[4]
@@ -70,12 +70,12 @@ class Red(Enemy):
         return self.__height
     
     @property
-    def vidas(self):
-        return self.__vidas
+    def lives(self):
+        return self.__lives
     
-    @vidas.setter 
-    def vidas(self, value):
-        self.__vidas = value
+    @lives.setter 
+    def lives(self, value):
+        self.__lives = value
     
     @property 
     def balas(self):

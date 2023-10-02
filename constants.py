@@ -29,14 +29,14 @@ BOMB_SPEED = [1.2, 1.2]
 SUPERB_SPEED = [0.2, 1.5]
 BULLET_P_SPEED = 6
 BULLET_E_SPEED = 2.5
-FONDO_SPEED = 1.5
+BACKGROUND_SPEED = 1.5
 
-# Escenas
+# Scenes
 SCENE_INTRO = 0
 SCENE_NIVEL = 1
 SCENE_GAMEOVER = 2
 
-# Sprites [banco, coord_x, coord_y, width, height]
+# Sprites [bank, coord_x, coord_y, width, height]
 LOCKHEED_1 = [0, 4, 5, 24, 15]
 LOCKHEED_2 = [0, 37, 5, 24, 25]
 LOCKHEED_LOOP = [0, 67, 26, 26, 12]

@@ -79,8 +79,8 @@ class Nivel:
                     self.__explosiones.append(Explosion(e.x + e.w /2, e.y + e.h/2))
                     b.is_alive = False
                     
-                    e.vidas -= 1
-                    if e.vidas == 0:
+                    e.lives -= 1
+                    if e.lives == 0:
                         e.is_alive = False                        
                         if e.type == 0:
                             self.__player.score += 100                        
@@ -104,11 +104,11 @@ class Nivel:
                         self.__explosiones.append(Explosion(self.__player.x + self.__player.w /2, 
                                                             self.__player.y + self.__player.h/2))
                         b.is_alive = False        
-                        self.__player.vidas -= 1                        
+                        self.__player.lives -= 1                        
                         if self.__player.score > self.__player.max_score:
                             self.__player.max_score = self.__player.score                        
                         self.__player.score = 0                        
-                        if self.__player.vidas == 0:
+                        if self.__player.lives == 0:
                             self.__player.is_alive = False
     
     def __check_bonus(self):
@@ -117,7 +117,7 @@ class Nivel:
             if e.type == 1:
                 bonus = False
         if bonus:
-            self.__player.vidas += 1
+            self.__player.lives += 1
             self.__player.bonus = True
 
     def __chocar(self, lst):
@@ -130,11 +130,11 @@ class Nivel:
                     self.__explosiones.append(Explosion(self.__player.x + self.__player.w /2, 
                                                         self.__player.y + self.__player.h/2))
                     e.is_alive = False    
-                    self.__player.vidas -= 1                    
+                    self.__player.lives -= 1                    
                     if self.__player.score > self.__player.max_score:
                         self.__player.max_score = self.__player.score                    
                     self.__player.score = 0                    
-                    if self.__player.vidas == 0:
+                    if self.__player.lives == 0:
                         self.__player.is_alive = False
 
     def __desaparecer(self, lst):
@@ -155,7 +155,7 @@ class Nivel:
         for i in self.__islas:
             i.update()
         self.__player.update() 
-        if pyxel.frame_count > 1400 or self.__player.vidas == 0:
+        if pyxel.frame_count > 1400 or self.__player.lives == 0:
             self.__nivel = constants.SCENE_GAMEOVER
         
     def draw(self):
@@ -168,7 +168,7 @@ class Nivel:
             e.draw()
         s = f"SCORE: {self.__player.score:>4}"
         m = f"MAX:   {self.__player.max_score:>4}"
-        v = f"VIDAS:{self.__player.vidas:>4}"
+        v = f"lives:{self.__player.lives:>4}"
         pyxel.text(5, 4, s, 7)
         pyxel.text(5, 10, m, 7)
         pyxel.text(70, 4, v, 7)

@@ -24,7 +24,7 @@ class Regular(Enemy):
             self.__point = Point(pyxel.rndi(40, 80), -sep)
         
         self.__is_alive = True
-        self.__vidas = 1
+        self.__lives = 1
         self.__type = 0
         self.__width = constants.REGULAR_UP_1[3]
         self.__height = constants.REGULAR_UP_1[4]
@@ -61,12 +61,12 @@ class Regular(Enemy):
         return self.__height
     
     @property
-    def vidas(self):
-        return self.__vidas
+    def lives(self):
+        return self.__lives
     
-    @vidas.setter 
-    def vidas(self, value):
-        self.__vidas = value
+    @lives.setter 
+    def lives(self, value):
+        self.__lives = value
     
     @property 
     def balas(self):

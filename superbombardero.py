@@ -20,7 +20,7 @@ class Superbombardero(Enemy):
 
         self.__point = Point(random.randint(10, 40), pyxel.height)
         self.__is_alive = True
-        self.__vidas = 8
+        self.__lives = 8
         self.__type = 3
         self.__width = constants.SUPERB_UP_1[3]
         self.__height = constants.SUPERB_UP_1[4]
@@ -55,12 +55,12 @@ class Superbombardero(Enemy):
         return self.__height
     
     @property
-    def vidas(self):
-        return self.__vidas
+    def lives(self):
+        return self.__lives
     
-    @vidas.setter 
-    def vidas(self, value):
-        self.__vidas = value
+    @lives.setter 
+    def lives(self, value):
+        self.__lives = value
     
     @property 
     def balas(self):

@@ -15,7 +15,7 @@ class Player():
         self.__point = Point(pyxel.width / 2 - constants.LOCKHEED_1[3]/2,
                              pyxel.height - constants.LOCKHEED_1[4])
         self.__is_alive = True
-        self.__vidas = 3
+        self.__lives = 3
         self.__width = constants.LOCKHEED_1[3]
         self.__height = constants.LOCKHEED_1[4]
         self.__speed_x = constants.LOCKHEED_SPEED[0]
@@ -67,12 +67,12 @@ class Player():
         return self.__height
     
     @property
-    def vidas(self):
-        return self.__vidas
+    def lives(self):
+        return self.__lives
     
-    @vidas.setter 
-    def vidas(self, value):
-        self.__vidas = value
+    @lives.setter 
+    def lives(self, value):
+        self.__lives = value
     
     @property 
     def bonus(self):
