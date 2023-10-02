@@ -8,7 +8,7 @@ Run game: python3 main.py
 import pyxel
 import constants
 from point import Point
-from bala import Bullet
+from bullet import Bullet
 
 class Player():
     def __init__(self):
@@ -144,13 +144,13 @@ class Player():
             constants.LOCKHEED_1[1] if pyxel.frame_count % 5 == 0 else constants.LOCKHEED_2[1],
             constants.LOCKHEED_1[2],
             constants.LOCKHEED_1[3], constants.LOCKHEED_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __pintar_loop(self):
         pyxel.blt(self.__point.x, self.__point.y,
             constants.LOCKHEED_LOOP[0], constants.LOCKHEED_LOOP[1], 
             constants.LOCKHEED_LOOP[2], constants.LOCKHEED_LOOP[3], 
-            constants.LOCKHEED_LOOP[4], constants.TRANSPARENTE)
+            constants.LOCKHEED_LOOP[4], constants.TRANSPARENT)
     
     def __mover(self):
         if pyxel.btn(pyxel.KEY_LEFT):

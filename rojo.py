@@ -9,10 +9,10 @@ import pyxel
 import random
 import constants
 from point import Point
-from bala import Bullet
-from enemigo import Enemigo
+from bullet import Bullet
+from enemy import Enemy
 
-class Rojo(Enemigo):
+class Rojo(Enemy):
     
     def __init__(self, sep):
         
@@ -155,7 +155,7 @@ class Rojo(Enemigo):
                 constants.ROJO_DER_2[1],
             constants.ROJO_DER_1[2],
             constants.ROJO_DER_1[3], constants.ROJO_DER_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     
     def __pintar_cuarto1(self):
@@ -163,7 +163,7 @@ class Rojo(Enemigo):
             constants.ROJO_315[1],
             constants.ROJO_315[2],
             constants.ROJO_315[3], constants.ROJO_315[4],
-            constants.TRANSPARENTE)  
+            constants.TRANSPARENT)  
         
         
     def __pintar_cuarto23(self):
@@ -172,13 +172,13 @@ class Rojo(Enemigo):
                 constants.ROJO_225[1],
                 constants.ROJO_225[2],
                 constants.ROJO_225[3], constants.ROJO_225[4],
-                constants.TRANSPARENTE)
+                constants.TRANSPARENT)
         if self.__point.x < 60:
             pyxel.blt(self.__point.x, self.__point.y, constants.ROJO_135[0],
                 constants.ROJO_135[1],
                 constants.ROJO_135[2],
                 constants.ROJO_135[3], constants.ROJO_135[4],
-                constants.TRANSPARENTE) 
+                constants.TRANSPARENT) 
     
     
     def __pintar_cuarto4(self):
@@ -186,7 +186,7 @@ class Rojo(Enemigo):
             constants.ROJO_45[1],
             constants.ROJO_45[2],
             constants.ROJO_45[3], constants.ROJO_45[4],
-            constants.TRANSPARENTE) 
+            constants.TRANSPARENT) 
     
     def __mover(self):
         self.__mover_recta_i()

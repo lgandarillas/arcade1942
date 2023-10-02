@@ -9,10 +9,10 @@ import pyxel
 import random
 import constants
 from point import Point
-from bala import Bullet
-from enemigo import Enemigo
+from bullet import Bullet
+from enemy import Enemy
 
-class Regular(Enemigo):
+class Regular(Enemy):
     
     def __init__(self, sep):
         
@@ -111,14 +111,14 @@ class Regular(Enemigo):
             constants.REGULAR_DOWN_1[1] if pyxel.frame_count % 5 == 0 else constants.REGULAR_DOWN_2[1],
             constants.REGULAR_DOWN_1[2],
             constants.REGULAR_DOWN_1[3], constants.REGULAR_DOWN_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __pintar_subida(self):
         pyxel.blt(self.__point.x, self.__point.y, constants.REGULAR_UP_1[0],
             constants.REGULAR_UP_1[1] if pyxel.frame_count % 5 == 0 else constants.REGULAR_UP_2[1],
             constants.REGULAR_UP_1[2],
             constants.REGULAR_UP_1[3], constants.REGULAR_UP_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __mover(self):
         if self.__point.y < 0 and self.__bajando:

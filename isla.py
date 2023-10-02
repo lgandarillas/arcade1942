@@ -50,10 +50,10 @@ class Isla:
             pyxel.blt(self.__point.x, self.__point.y, constants.ISLA_1[0],
                       constants.ISLA_1[1], constants.ISLA_1[2],
                       constants.ISLA_1[3], constants.ISLA_1[4],
-                      constants.TRANSPARENTE)
+                      constants.TRANSPARENT)
             
         if self.__tipo == 1:
             pyxel.blt(self.__point.x, self.__point.y, constants.ISLA_2[0],
                 constants.ISLA_2[1], constants.ISLA_2[2],
                 constants.ISLA_2[3], constants.ISLA_2[4],
-                constants.TRANSPARENTE)
+                constants.TRANSPARENT)

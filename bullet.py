@@ -76,7 +76,7 @@ class Bullet:
         pyxel.blt(self.__point.x, self.__point.y, constants.BANCO[0],
                   constants.BALA[1], constants.BALA[2],
                   constants.BALA[3], constants.BALA[4],
-                  constants.TRANSPARENTE)
+                  constants.TRANSPARENT)
     
     def __pintar_bala_e(self):
         pyxel.circ(self.__point.x, self.__point.y, 1 , constants.ROJO)

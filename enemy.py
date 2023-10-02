@@ -6,9 +6,9 @@ Run game: python3 main.py
 """
 
 import constants
-from bala import Bullet
+from bullet import Bullet
 
-class Enemigo:
+class Enemy:
     
     def __init__(self):
         self.__is_alive = True
@@ -40,9 +40,9 @@ class Enemigo:
 
     def __disparar(self):
         if self.__point.y % 20 == 0:
-            self.__balas.append(Bala(self.__point.x + self.__width/2 -5,
+            self.__balas.append(Bullet(self.__point.x + self.__width/2 -5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
-            self.__balas.append(Bala(self.__point.x + self.__width/2 + 5,
+            self.__balas.append(Bullet(self.__point.x + self.__width/2 + 5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))

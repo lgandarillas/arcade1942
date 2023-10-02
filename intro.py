@@ -25,5 +25,5 @@ class Intro():
     def draw(self):
         pyxel.blt(12, 42, constants.INTRO[0], constants.INTRO[1],
                   constants.INTRO[2], constants.INTRO[3],
-                  constants.INTRO[4], constants.TRANSPARENTE)
+                  constants.INTRO[4], constants.TRANSPARENT)
         pyxel.text(31, 126, "- PRESS ENTER -", 11)

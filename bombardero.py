@@ -9,10 +9,10 @@ import pyxel
 import random
 import constants
 from point import Point
-from bala import Bullet
-from enemigo import Enemigo
+from bullet import Bullet
+from enemy import Enemy
 
-class Bombardero(Enemigo):
+class Bombardero(Enemy):
     
     def __init__(self, sep):
         
@@ -109,21 +109,21 @@ class Bombardero(Enemigo):
             constants.BOMB_DOWN_1[1] if self.__frames % 5 == 0 else constants.BOMB_DOWN_2[1],
             constants.BOMB_DOWN_1[2] if self.__frames % 5 == 0 else constants.BOMB_DOWN_2[2], 
             constants.BOMB_DOWN_1[3], constants.BOMB_DOWN_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
         
     def __pintar_subida(self):
         pyxel.blt(self.__point.x, self.__point.y,constants.BOMB_UP_1[0],
             constants.BOMB_UP_1[1] if self.__frames % 5 == 0 else constants.BOMB_UP_2[1],
             constants.BOMB_UP_1[2],
             constants.BOMB_UP_1[3], constants.BOMB_UP_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __pintar_derecha(self):
         pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_DER[0],
             constants.BOMB_DER[1],
             constants.BOMB_DER[2],
             constants.BOMB_DER[3], constants.BOMB_DER[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __mover(self):
         if self.__frames > 400 and self.__frames < 500:

@@ -9,10 +9,10 @@ import pyxel
 import constants
 import random
 from point import Point
-from bala import Bullet
-from enemigo import Enemigo
+from bullet import Bullet
+from enemy import Enemy
 
-class Superbombardero(Enemigo):
+class Superbombardero(Enemy):
     
     def __init__(self):
         
@@ -90,7 +90,7 @@ class Superbombardero(Enemigo):
             constants.SUPERB_UP_1[1] if pyxel.frame_count % 5 == 0 else constants.SUPERB_UP_2[1],
             constants.SUPERB_UP_1[2], 
             constants.SUPERB_UP_1[3], constants.SUPERB_UP_1[4],
-            constants.TRANSPARENTE)
+            constants.TRANSPARENT)
     
     def __disparar(self):
         if self.__point.y % 20 == 0:
