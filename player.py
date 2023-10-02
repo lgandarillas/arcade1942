@@ -21,7 +21,7 @@ class Player():
         self.__speed_x = constants.LOCKHEED_SPEED[0]
         self.__speed_y = constants.LOCKHEED_SPEED[1]
         self.__bullets = []
-        self.__bala_type = constants.BULLET_PLAYER
+        self.__bullet_type = constants.BULLET_PLAYER
         self.__score = 0
         self.__max_score = 0
         self.__loop = False
@@ -39,15 +39,15 @@ class Player():
         if self.__bonus:
             if pyxel.btnp(pyxel.KEY_SPACE):
                 self.__bullets.append(Bullet(self.x + self.__width/2 - 5, 
-                                         self.y, self.__bala_type))
+                                         self.y, self.__bullet_type))
                 pyxel.play(1, 2)
                 self.__bullets.append(Bullet(self.x + self.__width/2 + 5, 
-                                         self.y, self.__bala_type))
+                                         self.y, self.__bullet_type))
                 pyxel.play(1, 2)
         else:
             if pyxel.btnp(pyxel.KEY_SPACE):
                 self.__bullets.append(Bullet(self.x + self.__width/2, 
-                                         self.y, self.__bala_type))
+                                         self.y, self.__bullet_type))
                 pyxel.play(1, 2)
     
     @property

@@ -32,7 +32,7 @@ class Bombardier(Enemy):
         self.__speed_y = constants.BOMB_SPEED[1]        
         self.__shot = random.randint(30, 50)
         self.__bullets = []
-        self.__bala_type = constants.BULLET_ENEMY        
+        self.__bullet_type = constants.BULLET_ENEMY        
         self.__frames = -sep
         
     @property
@@ -79,7 +79,7 @@ class Bombardier(Enemy):
         if self.__point.x == self.__shot or self.__point.y == self.__shot:
             self.__bullets.append(Bullet(self.__point.x + self.__width/2,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
+                                     self.__bullet_type))
     
     def __bajar(self):
         self.__point.y += self.__speed_y

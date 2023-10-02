@@ -33,7 +33,7 @@ class Regular(Enemy):
         self.__speed_y = constants.REGULAR_SPEED[1]
         self.__shot = random.randint(10, pyxel.height/2)
         self.__bullets = []
-        self.__bala_type = constants.BULLET_ENEMY
+        self.__bullet_type = constants.BULLET_ENEMY
         self.__bajando = True
         
     @property
@@ -80,7 +80,7 @@ class Regular(Enemy):
         if self.__point.y == self.__shot:
             self.__bullets.append(Bullet(self.__point.x + self.__width/2,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
+                                     self.__bullet_type))
     
     def __bajar(self):
         self.__point.y += self.__speed_y

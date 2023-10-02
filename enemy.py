@@ -12,8 +12,8 @@ class Enemy:
     
     def __init__(self):
         self.__is_alive = True
-        self.__balas = []
-        self.__bala_type = constants.BULLET_ENEMY
+        self.__bullets = []
+        self.__bullet_type = constants.BULLET_ENEMY
     
     def __bajar(self):
         self.__point.y += self.__speed_y
@@ -40,9 +40,9 @@ class Enemy:
 
     def __disparar(self):
         if self.__point.y % 20 == 0:
-            self.__balas.append(Bullet(self.__point.x + self.__width/2 -5,
+            self.__bullets.append(Bullet(self.__point.x + self.__width/2 -5,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
-            self.__balas.append(Bullet(self.__point.x + self.__width/2 + 5,
+                                     self.__bullet_type))
+            self.__bullets.append(Bullet(self.__point.x + self.__width/2 + 5,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
+                                     self.__bullet_type))

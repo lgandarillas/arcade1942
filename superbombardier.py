@@ -27,7 +27,7 @@ class Superbombardier(Enemy):
         self.__dir = 1 if random.random() <= 0.5 else -1
         self.__speed_x = constants.SUPERB_SPEED[0] * self.__dir
         self.__speed_y = constants.SUPERB_SPEED[1]
-        self.__bala_type = constants.BULLET_ENEMY
+        self.__bullet_type = constants.BULLET_ENEMY
         self.__bullets = []
        
     @property
@@ -96,10 +96,10 @@ class Superbombardier(Enemy):
         if self.__point.y % 20 == 0:
             self.__bullets.append(Bullet(self.__point.x + self.__width/2 -5,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
+                                     self.__bullet_type))
             self.__bullets.append(Bullet(self.__point.x + self.__width/2 + 5,
                                      self.__point.y + self.__height,
-                                     self.__bala_type))
+                                     self.__bullet_type))
     
     def __desaparecer(self, lst):
         l = lst
