@@ -13,8 +13,6 @@ from point import Point
 class Bullet:
     
     def __init__(self, x, y, tipo):
-        
-        
         if type(x) != int and type(x) != float:
             raise TypeError("x must be a number")
         if type(y) != int and type(y) != float:
@@ -37,15 +35,15 @@ class Bullet:
             self.__width = 2
             self.__height = 2
             self.__speed = constants.BALA_E_SPEED
-            
+
     @property
     def is_alive(self):
         return self.__is_alive
-    
+
     @is_alive.setter  
     def is_alive(self, value):
         self.__is_alive = value
-    
+
     @property
     def x(self):
         return self.__point.x 
