@@ -1,13 +1,14 @@
 """
-Luis Gandarillas Fernandez - Arcade 1942
+Arcade 1942
+by: Luis Gandarillas
 
-Run game: python3 juego.py
+Run game: python3 main.py
 """
 
 import pyxel
 import constants
 from point import Point
-from bala import Bala
+from bala import Bullet
 
 class Player():
     """ Player es el jugador principal del juego, Lockheed P-38"""
@@ -66,18 +67,18 @@ class Player():
         if self.__bonus:
             if pyxel.btnp(pyxel.KEY_SPACE):
                 # Bala izquierda
-                self.__balas.append(Bala(self.x + self.__width/2 - 5, 
+                self.__balas.append(Bullet(self.x + self.__width/2 - 5, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
                 
                 # Bala derecha
-                self.__balas.append(Bala(self.x + self.__width/2 + 5, 
+                self.__balas.append(Bullet(self.x + self.__width/2 + 5, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
         else:
             # Bala unica
             if pyxel.btnp(pyxel.KEY_SPACE):
-                self.__balas.append(Bala(self.x + self.__width/2, 
+                self.__balas.append(Bullet(self.x + self.__width/2, 
                                          self.y, self.__bala_type))
                 pyxel.play(1, 2)
     

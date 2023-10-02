@@ -10,7 +10,7 @@ import constants
 from point import Point
 
 
-class Bala:
+class Bullet:
     """ Clase para las balas que dispara el jugador y los enemigos."""
     def __init__(self, x, y, tipo):
         

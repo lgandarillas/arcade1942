@@ -1,14 +1,15 @@
 """
-Luis Gandarillas Fernandez - Arcade 1942
+Arcade 1942
+by: Luis Gandarillas
 
-Run game: python3 juego.py
+Run game: python3 main.py
 """
 
 import pyxel
 import constants
 import random
 from point import Point
-from bala import Bala
+from bala import Bullet
 from enemigo import Enemigo
 
 class Superbombardero(Enemigo):
@@ -119,10 +120,10 @@ class Superbombardero(Enemigo):
         """Cuando los frames coinciden con el valor aleatorio del disparo
         el avion dispara."""
         if self.__point.y % 20 == 0:
-            self.__balas.append(Bala(self.__point.x + self.__width/2 -5,
+            self.__balas.append(Bullet(self.__point.x + self.__width/2 -5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
-            self.__balas.append(Bala(self.__point.x + self.__width/2 + 5,
+            self.__balas.append(Bullet(self.__point.x + self.__width/2 + 5,
                                      self.__point.y + self.__height,
                                      self.__bala_type))
     

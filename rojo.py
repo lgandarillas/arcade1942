@@ -1,14 +1,15 @@
 """
-Luis Gandarillas Fernandez - Arcade 1942
+Arcade 1942
+by: Luis Gandarillas
 
-Run game: python3 juego.py
+Run game: python3 main.py
 """
 
 import pyxel
 import random
 import constants
 from point import Point
-from bala import Bala
+from bala import Bullet
 from enemigo import Enemigo
 
 class Rojo(Enemigo):
@@ -68,7 +69,7 @@ class Rojo(Enemigo):
         """Disparo añadiendo un objeto de la clase Bala a la lista de balas
         en el frame elegido aleatoriamente en el constructor"""
         if self.__disparo == self.__point.x:
-            self.__balas.append(Bala(self.__point.x + constants.BOMB_DOWN_1[3]/2,
+            self.__balas.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
                                      self.__point.y + constants.BOMB_DOWN_1[4],
                                      constants.BALA_ENEMY))
     

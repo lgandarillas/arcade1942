@@ -1,11 +1,12 @@
 """
-Luis Gandarillas Fernandez - Arcade 1942
+Arcade 1942
+by: Luis Gandarillas
 
-Run game: python3 juego.py
+Run game: python3 main.py
 """
 
 import constants
-from bala import Bala
+from bala import Bullet
 
 class Enemigo:
     
