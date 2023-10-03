@@ -93,7 +93,7 @@ class Bombardier(Enemy):
 	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()
@@ -139,7 +139,7 @@ class Bombardier(Enemy):
 		self.__frames += 1
 		self.__mover()
 		self.__shoot()
-		self.__desaparecer(self.__bullets)
+		self.__disappear(self.__bullets)
 		
 			
 	def draw(self):

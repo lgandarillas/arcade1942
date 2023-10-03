@@ -30,7 +30,7 @@ class Enemy:
 	def __morir(self):
 		self.__is_alive = False
 		
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()

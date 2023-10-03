@@ -137,7 +137,7 @@ class Nivel:
 					if self.__player.lives == 0:
 						self.__player.is_alive = False
 
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()
@@ -147,9 +147,9 @@ class Nivel:
 		
 	 
 	def update(self):
-		self.__desaparecer(self.__explosiones)
+		self.__disappear(self.__explosiones)
 		self.__matar(self.__enemigos)
-		self.__desaparecer(self.__enemigos)
+		self.__disappear(self.__enemigos)
 		self.__chocar(self.__enemigos)
 		self.__check_bonus()
 		for i in self.__islas:

@@ -130,7 +130,7 @@ class Player():
 		self.__point.y = max(self.__point.y, 0)
 		self.__point.y = min(self.__point.y, pyxel.height - self.__height)
 		
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()
@@ -167,7 +167,7 @@ class Player():
 		self.__hacer_loop()
 		self.__limitar()
 		self.__shoot()
-		self.__desaparecer(self.__bullets)	
+		self.__disappear(self.__bullets)	
 		
 	def draw(self):
 		if self.__loop == False:

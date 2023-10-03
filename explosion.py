@@ -29,13 +29,13 @@ class Explosion:
 	def __crecer(self):
 		self.__radius += 1
 		
-	def __desaparecer(self):
+	def __disappear(self):
 		if self.__radius > 6:
 			self.__is_alive = False
 		
 	def update(self):
 		self.__crecer()
-		self.__desaparecer()
+		self.__disappear()
 			
 	def draw(self):
 		pyxel.circ(self.__point.x, self.__point.y, 

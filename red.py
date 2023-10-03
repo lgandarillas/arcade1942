@@ -136,7 +136,7 @@ class Red(Enemy):
 					self.__cuarto1 = True
 		
 		
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()
@@ -198,7 +198,7 @@ class Red(Enemy):
 	def update(self):
 		self.__mover()
 		self.__shoot()
-		self.__desaparecer(self.__bullets)
+		self.__disappear(self.__bullets)
 		
 
 	def draw(self):

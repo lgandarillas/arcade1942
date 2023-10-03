@@ -101,7 +101,7 @@ class Superbombardier(Enemy):
 									 self.__point.y + self.__height,
 									 self.__bullet_type))
 		
-	def __desaparecer(self, lst):
+	def __disappear(self, lst):
 		l = lst
 		for e in l:
 			e.update()
@@ -121,7 +121,7 @@ class Superbombardier(Enemy):
 	def update(self):
 		self.__mover()
 		self.__shoot()
-		self.__desaparecer(self.__bullets)
+		self.__disappear(self.__bullets)
 	 
 	def draw(self):
 		if self.__is_alive:
