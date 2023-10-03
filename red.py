@@ -85,29 +85,29 @@ class Red(Enemy):
 	def type(self):
 		return self.__type
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed
 		
 	def __mover_recta_i(self):
 		if self.__point.x < 60 and self.__recto:
-			self.__derecha()
+			self.__turn_right()
 			if self.__point.x == 60:
 				self.__recto = False
 				self.__cuarto1 = True
 		
 	def __mover_recta_f(self):
 		if self.__recto and self.__point.x >= 60:
-			self.__derecha()
+			self.__turn_right()
 		if self.__point.x > 120:
 			self.__morir()
 	 
 	def __mover_cuarto1(self):
 		if self.__point.x >= 60 and self.__cuarto1:
 			x = self.__point.x + self.__speed
-			self.__derecha()
+			self.__turn_right()
 			self.__point.y = 70 - (-x**2 + 120*x - 3200)**(1/2)
 			if self.__point.x == 80:
 				self.__cuarto1 = False
@@ -116,7 +116,7 @@ class Red(Enemy):
 	def __mover_cuarto23(self):
 		if self.__point.x <= 80 and self.__cuarto23:
 			x = self.__point.x - self.__speed
-			self.__izquierda()
+			self.__turn_left()
 			self.__point.y = 70 + (-x**2 + 120*x - 3200)**(1/2)
 			if self.__point.x == 40:
 				self.__cuarto23 = False
@@ -125,7 +125,7 @@ class Red(Enemy):
 	def __mover_cuarto4(self):
 		if self.__point.x >= 40 and self.__point.x < 60 and self.__cuarto4:
 			x = self.__point.x + self.__speed
-			self.__derecha()
+			self.__turn_right()
 			self.__point.y = 70 - (-x**2 + 120*x - 3200)**(1/2)			
 			if self.__point.x == 60:
 				self.__cuarto4 = False

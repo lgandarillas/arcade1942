@@ -113,10 +113,10 @@ class Player():
 	def __increase_height(self):
 		self.__point.y -= self.__speed_y
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
 	def __hacer_loop(self):
@@ -154,9 +154,9 @@ class Player():
 		
 	def __mover(self):
 		if pyxel.btn(pyxel.KEY_LEFT):
-			self.__izquierda()
+			self.__turn_left()
 		if pyxel.btn(pyxel.KEY_RIGHT):
-			self.__derecha()
+			self.__turn_right()
 		if pyxel.btn(pyxel.KEY_UP):
 			self.__increase_height()
 		if pyxel.btn(pyxel.KEY_DOWN):

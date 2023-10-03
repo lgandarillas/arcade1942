@@ -88,10 +88,10 @@ class Regular(Enemy):
 	def __increase_height(self):
 		self.__point.y -= self.__speed_y
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
 	def __desaparecer(self, lst):
@@ -125,12 +125,12 @@ class Regular(Enemy):
 			self.__lower_height()
 		if self.__point.y >= 0 and self.__point.y < pyxel.height/2 and self.__bajando:
 			self.__lower_height()
-			self.__derecha()
+			self.__turn_right()
 		if self.__point.y >= pyxel.height/2:
 			self.__bajando = False
 		if not self.__bajando:
 			self.__increase_height()
-			self.__izquierda()
+			self.__turn_left()
 		
 	def update(self):
 		self.__mover()

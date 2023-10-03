@@ -87,7 +87,7 @@ class Bombardier(Enemy):
 	def __increase_height(self):
 		self.__point.y -= self.__speed_y
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
 	def __izquierda(self):
@@ -118,7 +118,7 @@ class Bombardier(Enemy):
 			constants.BOMB_UP_1[3], constants.BOMB_UP_1[4],
 			constants.TRANSPARENT)
 		
-	def __pintar_derecha(self):
+	def __pintar_turn_right(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_DER[0],
 			constants.BOMB_DER[1],
 			constants.BOMB_DER[2],
@@ -129,7 +129,7 @@ class Bombardier(Enemy):
 		if self.__frames > 400 and self.__frames < 500:
 			self.__lower_height()
 		if self.__frames > 500 and self.__frames < 560:
-			self.__derecha()
+			self.__turn_right()
 		elif self.__frames > 560:
 			self.__increase_height()
 		elif self.__frames > 660:
@@ -147,7 +147,7 @@ class Bombardier(Enemy):
 			if self.__frames > 400 and self.__frames < 500:
 				self.__pintar_bajada()
 			if self.__frames > 500 and self.__frames < 560:
-				self.__pintar_derecha()
+				self.__pintar_turn_right()
 			elif self.__frames >560:
 				self.__pintar_subida()
 		for b in self.__bullets:

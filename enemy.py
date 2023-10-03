@@ -21,10 +21,10 @@ class Enemy:
 	def __increase_height(self):
 		self.__point.y -= self.__speed_y
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
 	def __morir(self):

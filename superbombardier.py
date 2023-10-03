@@ -76,10 +76,10 @@ class Superbombardier(Enemy):
 	def __increase_height(self):
 		self.__point.y -= self.__speed_y
 		
-	def __derecha(self):
+	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
 	def __morir(self):
@@ -114,7 +114,7 @@ class Superbombardier(Enemy):
 			self.__increase_height()
 		if pyxel.frame_count >= 1240:
 			self.__increase_height()
-			self.__derecha()
+			self.__turn_right()
 		if self.__point.y < - 2 * constants.SUPERB_UP_1[4]:
 			self.__morir()
 		
