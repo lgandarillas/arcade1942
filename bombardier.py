@@ -90,7 +90,7 @@ class Bombardier(Enemy):
 	def __turn_right(self):
 		self.__point.x += self.__speed_x
 		
-	def __izquierda(self):
+	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
 	def __desaparecer(self, lst):
