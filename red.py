@@ -39,7 +39,7 @@ class Red(Enemy):
 		self.__cuarto4 = False
 		
 
-	def __disparar(self):
+	def __shoot(self):
 		if self.__shot == self.__point.x:
 			self.__bullets.append(Bullet(self.__point.x + constants.BOMB_DOWN_1[3]/2,
 									 self.__point.y + constants.BOMB_DOWN_1[4],
@@ -197,7 +197,7 @@ class Red(Enemy):
 		
 	def update(self):
 		self.__mover()
-		self.__disparar()
+		self.__shoot()
 		self.__desaparecer(self.__bullets)
 		
 

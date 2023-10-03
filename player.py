@@ -35,7 +35,7 @@ class Player():
 		self.__max_score = self.__score
 		self.__score = 0
 		
-	def __disparar(self):
+	def __shoot(self):
 		if self.__bonus:
 			if pyxel.btnp(pyxel.KEY_SPACE):
 				self.__bullets.append(Bullet(self.x + self.__width/2 - 5, 
@@ -166,7 +166,7 @@ class Player():
 		self.__mover()
 		self.__hacer_loop()
 		self.__limitar()
-		self.__disparar()
+		self.__shoot()
 		self.__desaparecer(self.__bullets)	
 		
 	def draw(self):

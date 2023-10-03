@@ -92,7 +92,7 @@ class Superbombardier(Enemy):
 			constants.SUPERB_UP_1[3], constants.SUPERB_UP_1[4],
 			constants.TRANSPARENT)
 		
-	def __disparar(self):
+	def __shoot(self):
 		if self.__point.y % 20 == 0:
 			self.__bullets.append(Bullet(self.__point.x + self.__width/2 -5,
 									 self.__point.y + self.__height,
@@ -120,7 +120,7 @@ class Superbombardier(Enemy):
 		
 	def update(self):
 		self.__mover()
-		self.__disparar()
+		self.__shoot()
 		self.__desaparecer(self.__bullets)
 	 
 	def draw(self):

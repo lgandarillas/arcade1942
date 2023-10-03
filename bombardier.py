@@ -75,7 +75,7 @@ class Bombardier(Enemy):
 	def type(self):
 		return self.__type
 		
-	def __disparar(self):
+	def __shoot(self):
 		if self.__point.x == self.__shot or self.__point.y == self.__shot:
 			self.__bullets.append(Bullet(self.__point.x + self.__width/2,
 									 self.__point.y + self.__height,
@@ -138,7 +138,7 @@ class Bombardier(Enemy):
 	def update(self):
 		self.__frames += 1
 		self.__mover()
-		self.__disparar()
+		self.__shoot()
 		self.__desaparecer(self.__bullets)
 		
 			

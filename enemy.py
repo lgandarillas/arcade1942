@@ -38,7 +38,7 @@ class Enemy:
 				l.remove(e)  
 		return l
 
-	def __disparar(self):
+	def __shoot(self):
 		if self.__point.y % 20 == 0:
 			self.__bullets.append(Bullet(self.__point.x + self.__width/2 -5,
 									 self.__point.y + self.__height,
