@@ -82,7 +82,7 @@ class Regular(Enemy):
 									 self.__point.y + self.__height,
 									 self.__bullet_type))
 		
-	def __bajar(self):
+	def __lower_height(self):
 		self.__point.y += self.__speed_y
 		
 	def __increase_height(self):
@@ -122,9 +122,9 @@ class Regular(Enemy):
 		
 	def __mover(self):
 		if self.__point.y < 0 and self.__bajando:
-			self.__bajar()
+			self.__lower_height()
 		if self.__point.y >= 0 and self.__point.y < pyxel.height/2 and self.__bajando:
-			self.__bajar()
+			self.__lower_height()
 			self.__derecha()
 		if self.__point.y >= pyxel.height/2:
 			self.__bajando = False

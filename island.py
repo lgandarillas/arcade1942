@@ -34,7 +34,7 @@ class Island:
 	def y(self):
 		return self.__point.y
 		
-	def __bajar(self):
+	def __lower_height(self):
 		self.__point.y += self.__movimiento
 		
 	def __reaparecer(self):
@@ -42,7 +42,7 @@ class Island:
 			self.__point.y = -constants.ISLAND_1[4]
 		
 	def update(self):
-		self.__bajar()
+		self.__lower_height()
 		self.__reaparecer()
 		
 	def draw(self):
