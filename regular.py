@@ -38,11 +38,11 @@ class Regular(Enemy):
 		
 	@property
 	def is_alive(self):
-		 return self.__is_alive
-	 
-	@is_alive.setter  
+		return self.__is_alive
+ 
+	@is_alive.setter
 	def is_alive(self, value):
-		 self.__is_alive = value
+		self.__is_alive = value
 		
 	@property
 	def x(self):
