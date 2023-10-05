@@ -119,10 +119,10 @@ class Bombardier(Enemy):
 			constants.TRANSPARENT)
 		
 	def __pintar_turn_right(self):
-		pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_DER[0],
-			constants.BOMB_DER[1],
-			constants.BOMB_DER[2],
-			constants.BOMB_DER[3], constants.BOMB_DER[4],
+		pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_RIGHT[0],
+			constants.BOMB_RIGHT[1],
+			constants.BOMB_RIGHT[2],
+			constants.BOMB_RIGHT[3], constants.BOMB_RIGHT[4],
 			constants.TRANSPARENT)
 		
 	def __mover(self):
