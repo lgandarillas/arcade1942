@@ -26,8 +26,8 @@ class Red(Enemy):
 		self.__is_alive = True
 		self.__lives = 1
 		self.__type = 1
-		self.__width = constants.RED_DER_1[3]
-		self.__height = constants.RED_DER_1[4]
+		self.__width = constants.RED_RIGHT_1[3]
+		self.__height = constants.RED_RIGHT_1[4]
 		self.__speed = constants.RED_SPEED[0]
 		self.__shot = random.randint(-20, 50)
 		self.__bullets = []
@@ -150,11 +150,11 @@ class Red(Enemy):
 
 
 	def __pintar_recto(self):
-		pyxel.blt(self.__point.x, self.__point.y, constants.RED_DER_1[0],
-			constants.RED_DER_1[1] if pyxel.frame_count % 5 == 0 else\
-				constants.RED_DER_2[1],
-			constants.RED_DER_1[2],
-			constants.RED_DER_1[3], constants.RED_DER_1[4],
+		pyxel.blt(self.__point.x, self.__point.y, constants.RED_RIGHT_1[0],
+			constants.RED_RIGHT_1[1] if pyxel.frame_count % 5 == 0 else\
+				constants.RED_RIGHT_2[1],
+			constants.RED_RIGHT_1[2],
+			constants.RED_RIGHT_1[3], constants.RED_RIGHT_1[4],
 			constants.TRANSPARENT)
 		
 		
