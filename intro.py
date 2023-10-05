@@ -20,7 +20,7 @@ class Intro():
 	def update(self):
 		if self.__intro == constants.SCENE_INTRO:
 			if pyxel.btnp(pyxel.KEY_RETURN) or pyxel.frame_count > 150:
-				self.__intro = constants.SCENE_NIVEL
+				self.__intro = constants.SCENE_LEVEL
 
 	def draw(self):
 		pyxel.blt(12, 42, constants.INTRO[0], constants.INTRO[1],

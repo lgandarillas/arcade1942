@@ -33,7 +33,7 @@ BACKGROUND_SPEED = 1.5
 
 # Scenes
 SCENE_INTRO = 0
-SCENE_NIVEL = 1
+SCENE_LEVEL = 1
 SCENE_GAMEOVER = 2
 
 # Sprites [bank, coord_x, coord_y, width, height]

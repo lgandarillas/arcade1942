@@ -1,7 +1,7 @@
 """
 Arcade 1942
 
-File: nivel.py
+File: level.py
 Author: Luis Gandarillas
 """
 
@@ -15,18 +15,18 @@ from red import Red
 from superbombardier import Superbombardier
 from explosion import Explosion
 
-class Nivel:
+class Level:
 		
 	def __init__(self):
 		self.__islas = self.__createIslas()
 		self.__enemigos = self.__createEnemigos()
 		self.__explosiones = list()
 		self.__player = Player()
-		self.__nivel = constants.SCENE_NIVEL
+		self.__level = constants.SCENE_LEVEL
 		
 	@property
 	def get_scene(self):
-		return self.__nivel
+		return self.__level
 		
 	def __createIslas(self):
 		islas = []
@@ -156,7 +156,7 @@ class Nivel:
 			i.update()
 		self.__player.update() 
 		if pyxel.frame_count > 1400 or self.__player.lives == 0:
-			self.__nivel = constants.SCENE_GAMEOVER
+			self.__level = constants.SCENE_GAMEOVER
 		
 	def draw(self):
 		for i in self.__islas:

@@ -8,7 +8,7 @@ Author: Luis Gandarillas
 import pyxel
 import constants
 from intro import Intro
-from nivel import Nivel
+from level import Level
 from gameover import Gameover
 
 
@@ -19,7 +19,7 @@ class Game():
 		pyxel.load("sprites1942.pyxres")
 		pyxel.play(0, 0, loop = True)
 		self.__intro = Intro()
-		self.__nivel = Nivel()
+		self.__level = Level()
 		self.__gameover = Gameover()
 		self.__scene = constants.SCENE_INTRO
 		pyxel.run(self.update, self.draw)   
@@ -27,19 +27,19 @@ class Game():
 	def __check_scene(self):
 		if self.__scene == constants.SCENE_INTRO:
 			self.__intro.update()
-			if self.__intro.get_scene == constants.SCENE_NIVEL:
-				self.__scene = constants.SCENE_NIVEL		
-		elif self.__scene == constants.SCENE_NIVEL:
-			self.__nivel.update()
-			if self.__nivel.get_scene == constants.SCENE_GAMEOVER:
+			if self.__intro.get_scene == constants.SCENE_LEVEL:
+				self.__scene = constants.SCENE_LEVEL		
+		elif self.__scene == constants.SCENE_LEVEL:
+			self.__level.update()
+			if self.__level.get_scene == constants.SCENE_GAMEOVER:
 				self.__scene = constants.SCENE_GAMEOVER
 		
 	def __draw_scene(self):
 		if self.__scene == constants.SCENE_INTRO:
 			self.__intro.draw()
 		
-		elif self.__scene == constants.SCENE_NIVEL:
-			self.__nivel.draw()
+		elif self.__scene == constants.SCENE_LEVEL:
+			self.__level.draw()
 		
 		elif self.__scene == constants.SCENE_GAMEOVER:
 			self.__gameover.draw()
