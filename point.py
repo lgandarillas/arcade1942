@@ -1,8 +1,8 @@
 """
 Arcade 1942
-by: Luis Gandarillas
 
-Run game: python3 main.py
+File: point.py
+Author: Luis Gandarillas
 """
 
 class Point():
