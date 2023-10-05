@@ -82,10 +82,10 @@ class Superbombardier(Enemy):
 	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
-	def __morir(self):
+	def __die(self):
 		self.__is_alive = False
 		
-	def __pintar_subida(self):
+	def __paint_rise(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.SUPERB_UP_1[0],
 			constants.SUPERB_UP_1[1] if pyxel.frame_count % 5 == 0 else constants.SUPERB_UP_2[1],
 			constants.SUPERB_UP_1[2], 
@@ -116,7 +116,7 @@ class Superbombardier(Enemy):
 			self.__increase_height()
 			self.__turn_right()
 		if self.__point.y < - 2 * constants.SUPERB_UP_1[4]:
-			self.__morir()
+			self.__die()
 		
 	def update(self):
 		self.__mover()
@@ -126,6 +126,6 @@ class Superbombardier(Enemy):
 	def draw(self):
 		if self.__is_alive:
 			if pyxel.frame_count > 1200:
-				self.__pintar_subida()		
+				self.__paint_rise()		
 		for b in self.__bullets:
 			b.draw()

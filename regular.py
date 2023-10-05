@@ -102,10 +102,10 @@ class Regular(Enemy):
 				l.remove(e)  
 		return l
 		
-	def __morir(self):
+	def __die(self):
 		self.__is_alive = False
 		
-	def __pintar_bajada(self):
+	def __paint_descent(self):
 		pyxel.blt(self.__point.x, self.__point.y, 
 			constants.REGULAR_DOWN_1[0],
 			constants.REGULAR_DOWN_1[1] if pyxel.frame_count % 5 == 0 else constants.REGULAR_DOWN_2[1],
@@ -113,7 +113,7 @@ class Regular(Enemy):
 			constants.REGULAR_DOWN_1[3], constants.REGULAR_DOWN_1[4],
 			constants.TRANSPARENT)
 		
-	def __pintar_subida(self):
+	def __paint_rise(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.REGULAR_UP_1[0],
 			constants.REGULAR_UP_1[1] if pyxel.frame_count % 5 == 0 else constants.REGULAR_UP_2[1],
 			constants.REGULAR_UP_1[2],
@@ -140,8 +140,8 @@ class Regular(Enemy):
 	def draw(self):
 		if self.__is_alive:
 			if self.__bajando:
-				self.__pintar_bajada()
+				self.__paint_descent()
 			if not self.__bajando:
-				self.__pintar_subida()
+				self.__paint_rise()
 		for b in self.__bullets:
 			b.draw()

@@ -102,7 +102,7 @@ class Red(Enemy):
 		if self.__recto and self.__point.x >= 60:
 			self.__turn_right()
 		if self.__point.x > 120:
-			self.__morir()
+			self.__die()
 	 
 	def __mover_cuarto1(self):
 		if self.__point.x >= 60 and self.__cuarto1:
@@ -145,7 +145,7 @@ class Red(Enemy):
 		return l
 		
 		
-	def __morir(self):
+	def __die(self):
 		self.__is_alive = False
 
 

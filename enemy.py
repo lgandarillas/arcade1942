@@ -27,7 +27,7 @@ class Enemy:
 	def __turn_left(self):
 		self.__point.x -= self.__speed_x
 		
-	def __morir(self):
+	def __die(self):
 		self.__is_alive = False
 		
 	def __disappear(self, lst):

@@ -66,7 +66,7 @@ class Bullet:
 	def __lower_height(self):
 		self.__point.y += self.__speed
 		
-	def __morir(self):
+	def __die(self):
 		if self.__type == constants.BULLET_PLAYER and self.__point.y < 5:
 			self.__is_alive = False  
 		elif self.__type == constants.BULLET_ENEMY and self.__point.y > pyxel.height -5:
@@ -86,7 +86,7 @@ class Bullet:
 			self.__increase_height()
 		if self.__type == constants.BULLET_ENEMY:
 			self.__lower_height()
-		self.__morir()
+		self.__die()
 		
 	def draw(self):
 		if self.__is_alive and self.__type == constants.BULLET_PLAYER:

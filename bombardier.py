@@ -101,17 +101,17 @@ class Bombardier(Enemy):
 				l.remove(e)  
 		return l
 		
-	def __morir(self):
+	def __die(self):
 		self.__is_alive = False
 		
-	def __pintar_bajada(self):
+	def __paint_descent(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_DOWN_2[0],
 			constants.BOMB_DOWN_1[1] if self.__frames % 5 == 0 else constants.BOMB_DOWN_2[1],
 			constants.BOMB_DOWN_1[2] if self.__frames % 5 == 0 else constants.BOMB_DOWN_2[2], 
 			constants.BOMB_DOWN_1[3], constants.BOMB_DOWN_1[4],
 			constants.TRANSPARENT)
 		
-	def __pintar_subida(self):
+	def __paint_rise(self):
 		pyxel.blt(self.__point.x, self.__point.y,constants.BOMB_UP_1[0],
 			constants.BOMB_UP_1[1] if self.__frames % 5 == 0 else constants.BOMB_UP_2[1],
 			constants.BOMB_UP_1[2],
@@ -133,7 +133,7 @@ class Bombardier(Enemy):
 		elif self.__frames > 560:
 			self.__increase_height()
 		elif self.__frames > 660:
-			self.__morir()
+			self.__die()
 		
 	def update(self):
 		self.__frames += 1
@@ -145,10 +145,10 @@ class Bombardier(Enemy):
 	def draw(self):
 		if self.__is_alive:
 			if self.__frames > 400 and self.__frames < 500:
-				self.__pintar_bajada()
+				self.__paint_descent()
 			if self.__frames > 500 and self.__frames < 560:
 				self.__pintar_turn_right()
 			elif self.__frames >560:
-				self.__pintar_subida()
+				self.__paint_rise()
 		for b in self.__bullets:
 			b.draw()
