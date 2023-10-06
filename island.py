@@ -24,7 +24,7 @@ class Island:
 		elif self.__kind == 1:
 			self.__point = Point(60, -150)
 		
-		self.__movimiento = constants.BACKGROUND_SPEED
+		self.__motion = constants.BACKGROUND_SPEED
 
 	@property
 	def x(self):
@@ -35,7 +35,7 @@ class Island:
 		return self.__point.y
 		
 	def __lower_height(self):
-		self.__point.y += self.__movimiento
+		self.__point.y += self.__motion
 		
 	def __reappear(self):
 		if self.__point.y > pyxel.height + constants.ISLAND_1[4]:
