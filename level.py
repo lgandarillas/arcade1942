@@ -115,7 +115,6 @@ class Level:
 			if e.type == 1:
 				bonus = False
 		if bonus:
-			self.__player.lives += 1
 			self.__player.bonus = True
 
 	def __chocar(self, lst):
@@ -140,7 +139,6 @@ class Level:
 			if e.is_alive == False:
 				l.remove(e)  
 		return l
-		
 	 
 	def update(self):
 		self.__disappear(self.__explosiones)

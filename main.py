@@ -11,7 +11,6 @@ from intro import Intro
 from level import Level
 from gameover import Gameover
 
-
 class Game():
 		
 	def __init__(self):
