@@ -138,7 +138,7 @@ class Player():
 				l.remove(e)  
 		return l
 		
-	def __paint_player(self):
+	def __pintar_player(self):
 		pyxel.blt(self.__point.x, self.__point.y,
 			constants.LOCKHEED_1[0],
 			constants.LOCKHEED_1[1] if pyxel.frame_count % 5 == 0 else constants.LOCKHEED_2[1],
@@ -146,13 +146,13 @@ class Player():
 			constants.LOCKHEED_1[3], constants.LOCKHEED_1[4],
 			constants.TRANSPARENT)
 		
-	def __paint_loop(self):
+	def __pintar_loop(self):
 		pyxel.blt(self.__point.x, self.__point.y,
 			constants.LOCKHEED_LOOP[0], constants.LOCKHEED_LOOP[1], 
 			constants.LOCKHEED_LOOP[2], constants.LOCKHEED_LOOP[3], 
 			constants.LOCKHEED_LOOP[4], constants.TRANSPARENT)
 		
-	def __move(self):
+	def __mover(self):
 		if pyxel.btn(pyxel.KEY_LEFT):
 			self.__turn_left()
 		if pyxel.btn(pyxel.KEY_RIGHT):
@@ -163,7 +163,7 @@ class Player():
 			self.__lower_height()
 		
 	def update(self):
-		self.__move()
+		self.__mover()
 		self.__hacer_loop()
 		self.__limitar()
 		self.__shoot()
@@ -171,9 +171,9 @@ class Player():
 		
 	def draw(self):
 		if self.__loop == False:
-			self.__paint_player()
+			self.__pintar_player()
 		elif self.__loop == True and pyxel.frame_count - self.__tloop < 10:
-			self.__paint_loop()
+			self.__pintar_loop()
 		elif self.__loop == True and pyxel.frame_count - self.__tloop >= 10:
 			self.__loop = False
 			self.__tloop = False

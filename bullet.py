@@ -12,7 +12,7 @@ from point import Point
 
 class Bullet:
 		
-	def __init__(self, x, y, type):
+	def __init__(self, x, y, tipo):
 		if type(x) != int and type(x) != float:
 			raise TypeError("x must be a number")
 		if type(y) != int and type(y) != float:
@@ -22,10 +22,10 @@ class Bullet:
 		
 		self.__is_alive = True
 		
-		if type != 0 and type != 1:
+		if tipo != 0 and tipo != 1:
 			raise ValueError("The bullet type must be 0 or 1.")
 		else:
-			self.__type = type
+			self.__type = tipo
 		
 		if self.__type == constants.BULLET_PLAYER:  
 			self.__width = constants.BULLET[3]
@@ -72,13 +72,13 @@ class Bullet:
 		elif self.__type == constants.BULLET_ENEMY and self.__point.y > pyxel.height -5:
 			self.__is_alive = False
 		
-	def __paint_bullet_p(self):
+	def __pintar_bullet_p(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.BANK[0],
 				  constants.BULLET[1], constants.BULLET[2],
 				  constants.BULLET[3], constants.BULLET[4],
 				  constants.TRANSPARENT)
 		
-	def __paint_bullet_e(self):
+	def __pintar_bullet_e(self):
 		pyxel.circ(self.__point.x, self.__point.y, 1 , constants.RED)
 		
 	def update(self):
@@ -90,6 +90,6 @@ class Bullet:
 		
 	def draw(self):
 		if self.__is_alive and self.__type == constants.BULLET_PLAYER:
-			self.__paint_bullet_p()		
+			self.__pintar_bullet_p()		
 		elif self.__is_alive and  self.__type == constants.BULLET_ENEMY:
-			self.__paint_bullet_e()
+			self.__pintar_bullet_e()

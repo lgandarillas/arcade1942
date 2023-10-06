@@ -120,7 +120,7 @@ class Regular(Enemy):
 			constants.REGULAR_UP_1[3], constants.REGULAR_UP_1[4],
 			constants.TRANSPARENT)
 		
-	def __move(self):
+	def __mover(self):
 		if self.__point.y < 0 and self.__bajando:
 			self.__lower_height()
 		if self.__point.y >= 0 and self.__point.y < pyxel.height/2 and self.__bajando:
@@ -133,7 +133,7 @@ class Regular(Enemy):
 			self.__turn_left()
 		
 	def update(self):
-		self.__move()
+		self.__mover()
 		self.__shoot()
 		self.__disappear(self.__bullets)
 

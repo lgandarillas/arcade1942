@@ -26,8 +26,8 @@ class Red(Enemy):
 		self.__is_alive = True
 		self.__lives = 1
 		self.__type = 1
-		self.__width = constants.RED_RIGHT_1[3]
-		self.__height = constants.RED_RIGHT_1[4]
+		self.__width = constants.RED_DER_1[3]
+		self.__height = constants.RED_DER_1[4]
 		self.__speed = constants.RED_SPEED[0]
 		self.__shot = random.randint(-20, 50)
 		self.__bullets = []
@@ -91,20 +91,20 @@ class Red(Enemy):
 	def __turn_left(self):
 		self.__point.x -= self.__speed
 		
-	def __move_recta_i(self):
+	def __mover_recta_i(self):
 		if self.__point.x < 60 and self.__recto:
 			self.__turn_right()
 			if self.__point.x == 60:
 				self.__recto = False
 				self.__cuarto1 = True
 		
-	def __move_recta_f(self):
+	def __mover_recta_f(self):
 		if self.__recto and self.__point.x >= 60:
 			self.__turn_right()
 		if self.__point.x > 120:
 			self.__die()
 	 
-	def __move_cuarto1(self):
+	def __mover_cuarto1(self):
 		if self.__point.x >= 60 and self.__cuarto1:
 			x = self.__point.x + self.__speed
 			self.__turn_right()
@@ -113,7 +113,7 @@ class Red(Enemy):
 				self.__cuarto1 = False
 				self.__cuarto23 = True
 		
-	def __move_cuarto23(self):
+	def __mover_cuarto23(self):
 		if self.__point.x <= 80 and self.__cuarto23:
 			x = self.__point.x - self.__speed
 			self.__turn_left()
@@ -122,7 +122,7 @@ class Red(Enemy):
 				self.__cuarto23 = False
 				self.__cuarto4 = True
 			
-	def __move_cuarto4(self):
+	def __mover_cuarto4(self):
 		if self.__point.x >= 40 and self.__point.x < 60 and self.__cuarto4:
 			x = self.__point.x + self.__speed
 			self.__turn_right()
@@ -149,16 +149,16 @@ class Red(Enemy):
 		self.__is_alive = False
 
 
-	def __paint_recto(self):
-		pyxel.blt(self.__point.x, self.__point.y, constants.RED_RIGHT_1[0],
-			constants.RED_RIGHT_1[1] if pyxel.frame_count % 5 == 0 else\
-				constants.RED_RIGHT_2[1],
-			constants.RED_RIGHT_1[2],
-			constants.RED_RIGHT_1[3], constants.RED_RIGHT_1[4],
+	def __pintar_recto(self):
+		pyxel.blt(self.__point.x, self.__point.y, constants.RED_DER_1[0],
+			constants.RED_DER_1[1] if pyxel.frame_count % 5 == 0 else\
+				constants.RED_DER_2[1],
+			constants.RED_DER_1[2],
+			constants.RED_DER_1[3], constants.RED_DER_1[4],
 			constants.TRANSPARENT)
 		
 		
-	def __paint_cuarto1(self):
+	def __pintar_cuarto1(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.RED_315[0],
 			constants.RED_315[1],
 			constants.RED_315[2],
@@ -166,7 +166,7 @@ class Red(Enemy):
 			constants.TRANSPARENT)  
 		
 		
-	def __paint_cuarto23(self):
+	def __pintar_cuarto23(self):
 		if self.__point.x >= 60:
 			pyxel.blt(self.__point.x, self.__point.y, constants.RED_225[0],
 				constants.RED_225[1],
@@ -181,22 +181,22 @@ class Red(Enemy):
 				constants.TRANSPARENT) 
 		
 		
-	def __paint_cuarto4(self):
+	def __pintar_cuarto4(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.RED_45[0],
 			constants.RED_45[1],
 			constants.RED_45[2],
 			constants.RED_45[3], constants.RED_45[4],
 			constants.TRANSPARENT) 
 		
-	def __move(self):
-		self.__move_recta_i()
-		self.__move_cuarto1()
-		self.__move_cuarto23()
-		self.__move_cuarto4()
-		self.__move_recta_f()
+	def __mover(self):
+		self.__mover_recta_i()
+		self.__mover_cuarto1()
+		self.__mover_cuarto23()
+		self.__mover_cuarto4()
+		self.__mover_recta_f()
 		
 	def update(self):
-		self.__move()
+		self.__mover()
 		self.__shoot()
 		self.__disappear(self.__bullets)
 		
@@ -207,13 +207,13 @@ class Red(Enemy):
 				b.draw()
 		
 		if self.__recto:
-			self.__paint_recto()
+			self.__pintar_recto()
 		
 		if self.__cuarto1:
-			self.__paint_cuarto1()
+			self.__pintar_cuarto1()
 		
 		if self.__cuarto23:
-			self.__paint_cuarto23()
+			self.__pintar_cuarto23()
 		
 		if self.__cuarto4:
-			self.__paint_cuarto4()
+			self.__pintar_cuarto4()
