@@ -37,13 +37,13 @@ class Island:
 	def __lower_height(self):
 		self.__point.y += self.__movimiento
 		
-	def __reaparecer(self):
+	def __reappear(self):
 		if self.__point.y > pyxel.height + constants.ISLAND_1[4]:
 			self.__point.y = -constants.ISLAND_1[4]
 		
 	def update(self):
 		self.__lower_height()
-		self.__reaparecer()
+		self.__reappear()
 		
 	def draw(self):
 		if self.__kind == 0:
