@@ -26,7 +26,7 @@ class Player():
 		self.__loop = False
 		self.__tloop = False
 		self.__bonus = False
-		
+
 	def __reset(self):
 		self.__point = Point(pyxel.width / 2 - constants.LOCKHEED_1[3]/2,
 							 pyxel.height - constants.LOCKHEED_1[4])		
