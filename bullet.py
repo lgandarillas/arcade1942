@@ -12,7 +12,7 @@ from point import Point
 
 class Bullet:
 		
-	def __init__(self, x, y, tipo):
+	def __init__(self, x, y, type):
 		if type(x) != int and type(x) != float:
 			raise TypeError("x must be a number")
 		if type(y) != int and type(y) != float:
@@ -22,10 +22,10 @@ class Bullet:
 		
 		self.__is_alive = True
 		
-		if tipo != 0 and tipo != 1:
+		if type != 0 and type != 1:
 			raise ValueError("The bullet type must be 0 or 1.")
 		else:
-			self.__type = tipo
+			self.__type = type
 		
 		if self.__type == constants.BULLET_PLAYER:  
 			self.__width = constants.BULLET[3]

@@ -140,7 +140,6 @@ class Bombardier(Enemy):
 		self.__move()
 		self.__shoot()
 		self.__disappear(self.__bullets)
-		
 			
 	def draw(self):
 		if self.__is_alive:

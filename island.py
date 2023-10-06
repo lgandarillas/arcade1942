@@ -13,15 +13,15 @@ from point import Point
 
 class Island:
 		
-	def __init__(self, tipo):
-		if tipo != 0 and tipo != 1:
+	def __init__(self, type):
+		if type != 0 and type != 1:
 			raise ValueError("The island type must be 0 or 1.")
 		else:
-			self.__tipo = tipo
+			self.__type = type
 
-		if self.__tipo == 0:
+		if self.__type == 0:
 			self.__point = Point(0, -constants.ISLAND_1[4])
-		elif self.__tipo == 1:
+		elif self.__type == 1:
 			self.__point = Point(60, -150)
 		
 		self.__movimiento = constants.BACKGROUND_SPEED
@@ -46,13 +46,13 @@ class Island:
 		self.__reaparecer()
 		
 	def draw(self):
-		if self.__tipo == 0:
+		if self.__type == 0:
 			pyxel.blt(self.__point.x, self.__point.y, constants.ISLAND_1[0],
 					  constants.ISLAND_1[1], constants.ISLAND_1[2],
 					  constants.ISLAND_1[3], constants.ISLAND_1[4],
 					  constants.TRANSPARENT)
 			
-		if self.__tipo == 1:
+		if self.__type == 1:
 			pyxel.blt(self.__point.x, self.__point.y, constants.ISLAND_2[0],
 				constants.ISLAND_2[1], constants.ISLAND_2[2],
 				constants.ISLAND_2[3], constants.ISLAND_2[4],
