@@ -91,20 +91,20 @@ class Red(Enemy):
 	def __turn_left(self):
 		self.__point.x -= self.__speed
 		
-	def __mover_recta_i(self):
+	def __move_recta_i(self):
 		if self.__point.x < 60 and self.__recto:
 			self.__turn_right()
 			if self.__point.x == 60:
 				self.__recto = False
 				self.__cuarto1 = True
 		
-	def __mover_recta_f(self):
+	def __move_recta_f(self):
 		if self.__recto and self.__point.x >= 60:
 			self.__turn_right()
 		if self.__point.x > 120:
 			self.__die()
 	 
-	def __mover_cuarto1(self):
+	def __move_cuarto1(self):
 		if self.__point.x >= 60 and self.__cuarto1:
 			x = self.__point.x + self.__speed
 			self.__turn_right()
@@ -113,7 +113,7 @@ class Red(Enemy):
 				self.__cuarto1 = False
 				self.__cuarto23 = True
 		
-	def __mover_cuarto23(self):
+	def __move_cuarto23(self):
 		if self.__point.x <= 80 and self.__cuarto23:
 			x = self.__point.x - self.__speed
 			self.__turn_left()
@@ -122,7 +122,7 @@ class Red(Enemy):
 				self.__cuarto23 = False
 				self.__cuarto4 = True
 			
-	def __mover_cuarto4(self):
+	def __move_cuarto4(self):
 		if self.__point.x >= 40 and self.__point.x < 60 and self.__cuarto4:
 			x = self.__point.x + self.__speed
 			self.__turn_right()
@@ -188,15 +188,15 @@ class Red(Enemy):
 			constants.RED_45[3], constants.RED_45[4],
 			constants.TRANSPARENT) 
 		
-	def __mover(self):
-		self.__mover_recta_i()
-		self.__mover_cuarto1()
-		self.__mover_cuarto23()
-		self.__mover_cuarto4()
-		self.__mover_recta_f()
+	def __move(self):
+		self.__move_recta_i()
+		self.__move_cuarto1()
+		self.__move_cuarto23()
+		self.__move_cuarto4()
+		self.__move_recta_f()
 		
 	def update(self):
-		self.__mover()
+		self.__move()
 		self.__shoot()
 		self.__disappear(self.__bullets)
 		

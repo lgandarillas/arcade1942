@@ -152,7 +152,7 @@ class Player():
 			constants.LOCKHEED_LOOP[2], constants.LOCKHEED_LOOP[3], 
 			constants.LOCKHEED_LOOP[4], constants.TRANSPARENT)
 		
-	def __mover(self):
+	def __move(self):
 		if pyxel.btn(pyxel.KEY_LEFT):
 			self.__turn_left()
 		if pyxel.btn(pyxel.KEY_RIGHT):
@@ -163,7 +163,7 @@ class Player():
 			self.__lower_height()
 		
 	def update(self):
-		self.__mover()
+		self.__move()
 		self.__hacer_loop()
 		self.__limitar()
 		self.__shoot()

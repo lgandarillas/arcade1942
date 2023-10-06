@@ -125,7 +125,7 @@ class Bombardier(Enemy):
 			constants.BOMB_RIGHT[3], constants.BOMB_RIGHT[4],
 			constants.TRANSPARENT)
 		
-	def __mover(self):
+	def __move(self):
 		if self.__frames > 400 and self.__frames < 500:
 			self.__lower_height()
 		if self.__frames > 500 and self.__frames < 560:
@@ -137,7 +137,7 @@ class Bombardier(Enemy):
 		
 	def update(self):
 		self.__frames += 1
-		self.__mover()
+		self.__move()
 		self.__shoot()
 		self.__disappear(self.__bullets)
 		

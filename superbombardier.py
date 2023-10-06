@@ -109,7 +109,7 @@ class Superbombardier(Enemy):
 				l.remove(e)  
 		return l
 		
-	def __mover(self):
+	def __move(self):
 		if pyxel.frame_count > 1200 and pyxel.frame_count < 1240:
 			self.__increase_height()
 		if pyxel.frame_count >= 1240:
@@ -119,7 +119,7 @@ class Superbombardier(Enemy):
 			self.__die()
 		
 	def update(self):
-		self.__mover()
+		self.__move()
 		self.__shoot()
 		self.__disappear(self.__bullets)
 	 
