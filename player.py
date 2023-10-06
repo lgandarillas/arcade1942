@@ -138,7 +138,7 @@ class Player():
 				l.remove(e)  
 		return l
 		
-	def __pintar_player(self):
+	def __paint_player(self):
 		pyxel.blt(self.__point.x, self.__point.y,
 			constants.LOCKHEED_1[0],
 			constants.LOCKHEED_1[1] if pyxel.frame_count % 5 == 0 else constants.LOCKHEED_2[1],
@@ -146,7 +146,7 @@ class Player():
 			constants.LOCKHEED_1[3], constants.LOCKHEED_1[4],
 			constants.TRANSPARENT)
 		
-	def __pintar_loop(self):
+	def __paint_loop(self):
 		pyxel.blt(self.__point.x, self.__point.y,
 			constants.LOCKHEED_LOOP[0], constants.LOCKHEED_LOOP[1], 
 			constants.LOCKHEED_LOOP[2], constants.LOCKHEED_LOOP[3], 
@@ -171,9 +171,9 @@ class Player():
 		
 	def draw(self):
 		if self.__loop == False:
-			self.__pintar_player()
+			self.__paint_player()
 		elif self.__loop == True and pyxel.frame_count - self.__tloop < 10:
-			self.__pintar_loop()
+			self.__paint_loop()
 		elif self.__loop == True and pyxel.frame_count - self.__tloop >= 10:
 			self.__loop = False
 			self.__tloop = False

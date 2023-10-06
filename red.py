@@ -149,7 +149,7 @@ class Red(Enemy):
 		self.__is_alive = False
 
 
-	def __pintar_recto(self):
+	def __paint_recto(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.RED_RIGHT_1[0],
 			constants.RED_RIGHT_1[1] if pyxel.frame_count % 5 == 0 else\
 				constants.RED_RIGHT_2[1],
@@ -158,7 +158,7 @@ class Red(Enemy):
 			constants.TRANSPARENT)
 		
 		
-	def __pintar_cuarto1(self):
+	def __paint_cuarto1(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.RED_315[0],
 			constants.RED_315[1],
 			constants.RED_315[2],
@@ -166,7 +166,7 @@ class Red(Enemy):
 			constants.TRANSPARENT)  
 		
 		
-	def __pintar_cuarto23(self):
+	def __paint_cuarto23(self):
 		if self.__point.x >= 60:
 			pyxel.blt(self.__point.x, self.__point.y, constants.RED_225[0],
 				constants.RED_225[1],
@@ -181,7 +181,7 @@ class Red(Enemy):
 				constants.TRANSPARENT) 
 		
 		
-	def __pintar_cuarto4(self):
+	def __paint_cuarto4(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.RED_45[0],
 			constants.RED_45[1],
 			constants.RED_45[2],
@@ -207,13 +207,13 @@ class Red(Enemy):
 				b.draw()
 		
 		if self.__recto:
-			self.__pintar_recto()
+			self.__paint_recto()
 		
 		if self.__cuarto1:
-			self.__pintar_cuarto1()
+			self.__paint_cuarto1()
 		
 		if self.__cuarto23:
-			self.__pintar_cuarto23()
+			self.__paint_cuarto23()
 		
 		if self.__cuarto4:
-			self.__pintar_cuarto4()
+			self.__paint_cuarto4()

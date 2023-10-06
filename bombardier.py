@@ -118,7 +118,7 @@ class Bombardier(Enemy):
 			constants.BOMB_UP_1[3], constants.BOMB_UP_1[4],
 			constants.TRANSPARENT)
 		
-	def __pintar_turn_right(self):
+	def __paint_turn_right(self):
 		pyxel.blt(self.__point.x, self.__point.y, constants.BOMB_RIGHT[0],
 			constants.BOMB_RIGHT[1],
 			constants.BOMB_RIGHT[2],
@@ -147,7 +147,7 @@ class Bombardier(Enemy):
 			if self.__frames > 400 and self.__frames < 500:
 				self.__paint_descent()
 			if self.__frames > 500 and self.__frames < 560:
-				self.__pintar_turn_right()
+				self.__paint_turn_right()
 			elif self.__frames >560:
 				self.__paint_rise()
 		for b in self.__bullets:
