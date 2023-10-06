@@ -104,9 +104,7 @@ class Level:
 						self.__explosiones.append(Explosion(self.__player.x + self.__player.w /2, 
 															self.__player.y + self.__player.h/2))
 						b.is_alive = False		
-						self.__player.lives -= 1						
-						if self.__player.score > self.__player.max_score:
-							self.__player.max_score = self.__player.score						
+						self.__player.lives -= 1											
 						self.__player.score = 0						
 						if self.__player.lives == 0:
 							self.__player.is_alive = False
@@ -130,9 +128,7 @@ class Level:
 					self.__explosiones.append(Explosion(self.__player.x + self.__player.w /2, 
 														self.__player.y + self.__player.h/2))
 					e.is_alive = False	
-					self.__player.lives -= 1					
-					if self.__player.score > self.__player.max_score:
-						self.__player.max_score = self.__player.score					
+					self.__player.lives -= 1									
 					self.__player.score = 0					
 					if self.__player.lives == 0:
 						self.__player.is_alive = False
@@ -167,8 +163,6 @@ class Level:
 		for e in self.__explosiones:
 			e.draw()
 		s = f"SCORE: {self.__player.score:>4}"
-		m = f"MAX:   {self.__player.max_score:>4}"
-		v = f"lives:{self.__player.lives:>4}"
+		v = f"LIVES:{self.__player.lives:>4}"
 		pyxel.text(5, 4, s, 7)
-		pyxel.text(5, 10, m, 7)
 		pyxel.text(70, 4, v, 7)

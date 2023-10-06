@@ -23,7 +23,6 @@ class Player():
 		self.__bullets = []
 		self.__bullet_type = constants.BULLET_PLAYER
 		self.__score = 0
-		self.__max_score = 0
 		self.__loop = False
 		self.__tloop = False
 		self.__bonus = False
@@ -32,7 +31,6 @@ class Player():
 		self.__point = Point(pyxel.width / 2 - constants.LOCKHEED_1[3]/2,
 							 pyxel.height - constants.LOCKHEED_1[4])		
 		self.__is_alive = True
-		self.__max_score = self.__score
 		self.__score = 0
 		
 	def __shoot(self):
@@ -93,14 +91,6 @@ class Player():
 	@score.setter 
 	def score(self, value):
 		self.__score = value
-		
-	@property 
-	def max_score(self):
-		return self.__max_score
-		
-	@max_score.setter 
-	def max_score(self, value):
-		self.__max_score = value
 		
 	@property
 	def bullets(self):
