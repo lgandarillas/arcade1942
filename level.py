@@ -18,7 +18,7 @@ from explosion import Explosion
 class Level:
 		
 	def __init__(self):
-		self.__islas = self.__createIslas()
+		self.__islands = self.__createIslands()
 		self.__enemigos = self.__createEnemigos()
 		self.__explosiones = list()
 		self.__player = Player()
@@ -28,13 +28,13 @@ class Level:
 	def get_scene(self):
 		return self.__level
 		
-	def __createIslas(self):
-		islas = []
+	def __createIslands(self):
+		islands = []
 		
-		islas.append(Island(0))
-		islas.append(Island(1))
+		islands.append(Island(0))
+		islands.append(Island(1))
 		
-		return islas
+		return islands
 		
 	def __createEnemigos(self):
 		enemigos = []
@@ -146,14 +146,14 @@ class Level:
 		self.__disappear(self.__enemigos)
 		self.__chocar(self.__enemigos)
 		self.__check_bonus()
-		for i in self.__islas:
+		for i in self.__islands:
 			i.update()
 		self.__player.update() 
 		if pyxel.frame_count > 1400 or self.__player.lives == 0:
 			self.__level = constants.SCENE_GAMEOVER
 		
 	def draw(self):
-		for i in self.__islas:
+		for i in self.__islands:
 			i.draw()
 		for e in self.__enemigos:
 			e.draw()
