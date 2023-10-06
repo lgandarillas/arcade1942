@@ -96,7 +96,6 @@ class Player():
 	def bullets(self):
 		return self.__bullets
 		
-		
 	def __lower_height(self):
 		self.__point.y += self.__speed_y
 		
