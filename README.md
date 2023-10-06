@@ -1,6 +1,6 @@
 # Arcade1942
 This project is a recreation of the game **1942** in Python, utilizing the **Pyxel** graphics library for visual representation. The game involves controlling an aircraft that can move across the screen, shoot at enemies, and avoid getting shot down.
-<img src="Img/Intro.png" alt="Arcade1942" width="500">
+<img src="Img/Intro.png" alt="Arcade1942" width="800">
 ## Class Design
 The project has been developed following the Object-Oriented Programming (OOP) paradigm and features the following class design:
 -  **Game**: The main class responsible for running the game and managing scenes.
